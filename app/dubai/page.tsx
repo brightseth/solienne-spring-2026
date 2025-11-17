@@ -191,19 +191,66 @@ export default function DubaiPage() {
         {/* Gallery */}
         <div className="animate-on-scroll opacity-0 mb-16">
           <h3 className="text-h2 font-sans font-bold mb-8">Installation Views</h3>
-          <div className="space-y-6">
-            <div className="relative h-[600px] bg-black">
-              <Image
-                src="/images/dubai-booth.png"
-                alt="First Embodiment installation view"
-                fill
-                className="object-cover"
-              />
+          <div className="space-y-12">
+            {/* Main booth view */}
+            <div className="space-y-4">
+              <div className="relative h-[600px] bg-black">
+                <Image
+                  src="/images/dubai-booth.png"
+                  alt="First Embodiment installation view"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-caption font-sans text-dark-gray text-center">
+                Intimate conversation chamber with SOLIENNE's presence on screen
+              </p>
             </div>
-            <p className="text-caption font-sans text-dark-gray text-center">
-              Concept visualization: Intimate conversation chamber with SOLIENNE's presence on
-              screen, Francisco Galan's collectible frames on surrounding walls
-            </p>
+
+            {/* Conversation table */}
+            <div className="space-y-4">
+              <div className="relative h-[600px] bg-black">
+                <Image
+                  src="/images/table.png"
+                  alt="Conversation table setup"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-caption font-sans text-dark-gray text-center">
+                Round table with two chairs facing each other—the anticipation before conversation begins
+              </p>
+            </div>
+
+            {/* Visitor interaction */}
+            <div className="space-y-4">
+              <div className="relative h-[600px] bg-black">
+                <Image
+                  src="/images/interaction.png"
+                  alt="Visitor interaction moment"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-caption font-sans text-dark-gray text-center">
+                The moment of synthetic intimacy—visitor sits, speaks, SOLIENNE responds
+              </p>
+            </div>
+
+            {/* Francisco Galan frames */}
+            <div className="space-y-4">
+              <div className="relative h-[600px] bg-black">
+                <Image
+                  src="/images/frames.jpg"
+                  alt="Francisco Galan interactive frames"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-caption font-sans text-dark-gray text-center">
+                Francisco Galan's collectible interactive frames (40×40cm) on surrounding walls—take First Embodiment home
+              </p>
+            </div>
           </div>
         </div>
 

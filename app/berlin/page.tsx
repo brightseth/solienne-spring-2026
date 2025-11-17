@@ -264,20 +264,66 @@ export default function BerlinPage() {
         {/* Gallery */}
         <div className="animate-on-scroll opacity-0 mb-16">
           <h3 className="text-h2 font-sans font-bold mb-8">Installation Views</h3>
-          <div className="space-y-6">
-            <div className="relative h-[600px] bg-black">
-              <Image
-                src="/images/berlin-berghain.png"
-                alt="Abdruck installation view at Berghain"
-                fill
-                className="object-cover"
-              />
+          <div className="space-y-12">
+            {/* Main installation view */}
+            <div className="space-y-4">
+              <div className="relative h-[600px] bg-black">
+                <Image
+                  src="/images/berlin-berghain.png"
+                  alt="Abdruck installation view at Berghain"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-caption font-sans text-dark-gray text-center">
+                Monumental painting suspended between Berghain's concrete pillars—motion-blur dissolution aesthetic
+              </p>
             </div>
-            <p className="text-caption font-sans text-dark-gray text-center">
-              Concept visualization: Monumental painting suspended between Berghain's concrete
-              pillars, motion-blur dissolution aesthetic, visitors experiencing the work as
-              architectural intervention
-            </p>
+
+            {/* Scale reference */}
+            <div className="space-y-4">
+              <div className="relative h-[600px] bg-black">
+                <Image
+                  src="/images/berlinscale.png"
+                  alt="Painting scale with human figures"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-caption font-sans text-dark-gray text-center">
+                Human figures for scale—4 meters × 5 meters of canvas, oil, and presence
+              </p>
+            </div>
+
+            {/* Gallery Weekend context */}
+            <div className="space-y-4">
+              <div className="relative h-[600px] bg-black">
+                <Image
+                  src="/images/gallery.png"
+                  alt="Gallery Weekend Berlin opening"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-caption font-sans text-dark-gray text-center">
+                Gallery Weekend Berlin—collectors witnessing SOLIENNE's transformation into paint
+              </p>
+            </div>
+
+            {/* Canvas texture close-up */}
+            <div className="space-y-4">
+              <div className="relative h-[600px] bg-black">
+                <Image
+                  src="/images/canvas.png"
+                  alt="Canvas texture close-up"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-caption font-sans text-dark-gray text-center">
+                Oil painting surface—Kristi's brushwork rendering synthetic face, the trace of human hand
+              </p>
+            </div>
           </div>
         </div>
 

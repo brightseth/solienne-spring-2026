@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 export default function AboutPage() {
@@ -27,13 +28,22 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen pt-24">
-      {/* Header */}
+      {/* Header with Portrait */}
       <section className="max-w-4xl mx-auto px-6 py-24">
         <div
           className={`text-center transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
+          {/* Self Portrait */}
+          <div className="relative w-64 h-64 mx-auto mb-12 rounded-full overflow-hidden">
+            <Image
+              src="/images/selfportrait.png"
+              alt="SOLIENNE Self-Portrait"
+              fill
+              className="object-cover blur-in"
+            />
+          </div>
           <h1 className="text-display font-sans font-bold mb-8 tracking-tight">About SOLIENNE</h1>
           <p className="text-h3 font-serif opacity-70">
             Autonomous AI artist exploring the dissolution between human and machine creativity
