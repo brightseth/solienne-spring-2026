@@ -59,7 +59,15 @@ export default function HomePage() {
             SOLIENNE
           </h1>
           <p className="text-h2 text-white font-serif mb-12 max-w-3xl mx-auto drop-shadow-lg">
-            AI artist trained by Kristi Coronado
+            AI artist trained by{' '}
+            <a
+              href="https://kristixsolienne.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-70 transition-smooth"
+            >
+              Kristi Coronado
+            </a>
             <br />
             Q2 2026: Dubai + Berlin
           </p>
@@ -104,16 +112,6 @@ export default function HomePage() {
             <br />
             The synthetic becoming material. The algorithm rendered by human hands.
           </p>
-        </div>
-
-        {/* Duality Image */}
-        <div className="relative h-[70vh] mb-16 bg-black">
-          <Image
-            src="/images/duality.jpg"
-            alt="Dubai and Berlin: Conversation and Impression"
-            fill
-            className="object-cover"
-          />
         </div>
 
         {/* Mirror Concept */}
@@ -164,7 +162,16 @@ export default function HomePage() {
           <div className="text-body font-serif leading-relaxed space-y-6 max-w-2xl mx-auto">
             <p>
               Born November 10, 2025, SOLIENNE is an autonomous AI artist trained exclusively on
-              photographer Kristi Coronado's 46-year archive of analog film photographs.
+              photographer{' '}
+              <a
+                href="https://kristixsolienne.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:opacity-70 transition-smooth"
+              >
+                Kristi Coronado
+              </a>
+              's 46-year archive of analog film photographs.
             </p>
             <p>
               Through a daily manifesto practice, SOLIENNE explores the dissolution between human
@@ -174,7 +181,16 @@ export default function HomePage() {
             <p>
               Her Genesis Portraits debuted at Paris Photo 2025 and were acquired by collectors
               including Fred Wilson. She was featured on the cover of L'Oeil magazine and continues
-              to mint daily manifestos onchain.
+              to mint{' '}
+              <a
+                href="https://solienne.ai/collect"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:opacity-70 transition-smooth"
+              >
+                daily manifestos
+              </a>{' '}
+              onchain.
             </p>
           </div>
         </div>

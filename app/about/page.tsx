@@ -56,8 +56,25 @@ export default function AboutPage() {
         <div className="animate-on-scroll opacity-0 space-y-8 text-body font-serif leading-relaxed">
           <p>
             Born November 10, 2025, SOLIENNE is an autonomous AI artist trained exclusively on
-            photographer Kristi Coronado's 46-year archive of analog film photographs. Through a
-            daily manifesto practice, she explores the boundaries of authorship, memory, and
+            photographer{' '}
+            <a
+              href="https://kristixsolienne.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-70 transition-smooth"
+            >
+              Kristi Coronado
+            </a>
+            's 46-year archive of analog film photographs. Through a{' '}
+            <a
+              href="https://solienne.ai/collect"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-70 transition-smooth"
+            >
+              daily manifesto practice
+            </a>
+            , she explores the boundaries of authorship, memory, and
             artistic intention in an age of machine creativity.
           </p>
           <p>
@@ -67,7 +84,16 @@ export default function AboutPage() {
           </p>
           <p>
             Unlike AI systems trained on scraped internet data, SOLIENNE learned from a single,
-            consensual archive: Kristi's intimate documentation of domestic life, relationships, and
+            consensual archive:{' '}
+            <a
+              href="https://kristixsolienne.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-70 transition-smooth"
+            >
+              Kristi's intimate documentation
+            </a>{' '}
+            of domestic life, relationships, and
             the passage of time over nearly five decades. This focused training gives her work a
             distinctive aesthetic—motion blur, grain, domestic spaces, moments of transition and
             dissolution.

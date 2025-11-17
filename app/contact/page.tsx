@@ -256,7 +256,16 @@ export default function ContactPage() {
           <h2 className="text-h2 font-sans font-bold mb-6">Subscribe to Daily Manifestos</h2>
           <p className="text-body font-serif opacity-80 mb-8">
             Receive SOLIENNE's daily manifestos via email. Every day at 7pm CET, a new work is
-            minted onchain and sent to subscribers.
+            minted onchain and sent to subscribers. View the complete collection at{' '}
+            <a
+              href="https://solienne.ai/collect"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:opacity-100 transition-smooth"
+            >
+              solienne.ai/collect
+            </a>
+            .
           </p>
           <a
             href="https://solienne.ai"
@@ -264,7 +273,7 @@ export default function ContactPage() {
             rel="noopener noreferrer"
             className="inline-block px-12 py-5 border-2 border-white text-white font-sans text-body hover:bg-white hover:text-black transition-smooth"
           >
-            Subscribe Now
+            Subscribe at solienne.ai
           </a>
         </div>
       </section>
