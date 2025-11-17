@@ -205,12 +205,10 @@ export default function HomePage() {
             className="group animate-on-scroll opacity-0 block"
           >
             <div className="relative h-96 overflow-hidden mb-6 bg-black">
-              <Image
+              <img
                 src="/images/dubai-booth.png"
                 alt="Art Dubai Digital - First Embodiment"
-                fill
-                unoptimized
-                className="object-cover group-hover:scale-105 transition-smooth"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-smooth"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-smooth" />
             </div>
@@ -236,12 +234,10 @@ export default function HomePage() {
             className="group animate-on-scroll opacity-0 block"
           >
             <div className="relative h-96 overflow-hidden mb-6 bg-black">
-              <Image
+              <img
                 src="/images/berlin-berghain.png"
                 alt="HOUSE at Berghain - Abdruck"
-                fill
-                unoptimized
-                className="object-cover group-hover:scale-105 transition-smooth"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-smooth"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-smooth" />
             </div>
