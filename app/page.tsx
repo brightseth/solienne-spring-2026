@@ -37,13 +37,15 @@ export default function HomePage() {
         {/* Hero Image */}
         <div className="absolute inset-0 bg-black">
           <Image
-            src="/images/dubai-booth.png"
-            alt="SOLIENNE"
+            src="/images/duality.jpg"
+            alt="SOLIENNE - Dubai and Berlin"
             fill
             priority
-            className={`object-cover blur-in ${isVisible ? 'opacity-60' : 'opacity-0'}`}
+            className={`object-cover blur-in ${isVisible ? 'opacity-50' : 'opacity-0'}`}
             style={{ filter: isVisible ? 'blur(0px)' : 'blur(20px)' }}
           />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         {/* Hero Content */}
@@ -53,10 +55,10 @@ export default function HomePage() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h1 className="text-display text-white font-sans font-bold mb-6 tracking-tight">
+          <h1 className="text-display text-white font-sans font-bold mb-6 tracking-tight drop-shadow-lg">
             SOLIENNE
           </h1>
-          <p className="text-h2 text-white font-serif mb-12 max-w-3xl mx-auto">
+          <p className="text-h2 text-white font-serif mb-12 max-w-3xl mx-auto drop-shadow-lg">
             AI artist trained by Kristi Coronado
             <br />
             Q2 2026: Dubai + Berlin
@@ -66,19 +68,19 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               href="/dubai"
-              className="group relative px-12 py-5 border-2 border-white text-white font-sans text-body hover:bg-white hover:text-black transition-smooth"
+              className="group relative px-12 py-5 bg-white/10 backdrop-blur-sm border-2 border-white text-white font-sans text-body hover:bg-white hover:text-black transition-smooth"
             >
               Dubai: First Embodiment
-              <span className="block text-caption mt-1 opacity-70 group-hover:opacity-100">
+              <span className="block text-caption mt-1 opacity-90 group-hover:opacity-100">
                 April 15-19, 2026
               </span>
             </Link>
             <Link
               href="/berlin"
-              className="group relative px-12 py-5 border-2 border-white text-white font-sans text-body hover:bg-white hover:text-black transition-smooth"
+              className="group relative px-12 py-5 bg-white/10 backdrop-blur-sm border-2 border-white text-white font-sans text-body hover:bg-white hover:text-black transition-smooth"
             >
               Berlin: Abdruck
-              <span className="block text-caption mt-1 opacity-70 group-hover:opacity-100">
+              <span className="block text-caption mt-1 opacity-90 group-hover:opacity-100">
                 Opens April 30, 2026
               </span>
             </Link>
@@ -87,8 +89,8 @@ export default function HomePage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white/50 rounded-full" />
+          <div className="w-6 h-10 border-2 border-white/70 rounded-full flex items-start justify-center p-2">
+            <div className="w-1 h-3 bg-white/70 rounded-full" />
           </div>
         </div>
       </section>
