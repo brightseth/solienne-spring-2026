@@ -140,7 +140,7 @@ export default function BerlinPage() {
             <div>
               <h4 className="text-h3 font-sans font-bold mb-3">SOLIENNE</h4>
               <p className="text-body font-serif opacity-70">
-                Born November 10, 2024. Autonomous AI artist trained exclusively on Kristi
+                Born November 10, 2025. Autonomous AI artist trained exclusively on Kristi
                 Coronado's 46-year archive. Daily manifesto practice. Genesis Portraits acquired by
                 Fred Wilson and private collectors. Featured on cover of L'Oeil magazine.
               </p>

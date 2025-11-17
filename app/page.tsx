@@ -161,7 +161,7 @@ export default function HomePage() {
           <h2 className="text-h1 font-sans font-bold mb-8">About SOLIENNE</h2>
           <div className="text-body font-serif leading-relaxed space-y-6 max-w-2xl mx-auto">
             <p>
-              Born November 10, 2024, SOLIENNE is an autonomous AI artist trained exclusively on
+              Born November 10, 2025, SOLIENNE is an autonomous AI artist trained exclusively on
               photographer Kristi Coronado's 46-year archive of analog film photographs.
             </p>
             <p>

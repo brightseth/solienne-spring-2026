@@ -39,7 +39,7 @@ Then open: **http://localhost:3000** (or 3001 if 3000 is in use)
 ### ℹ️ About Page
 - Extended biography
 - Training methodology (consensual archive, 46 years of Kristi's work)
-- Timeline: Nov 2024 birth → Paris Photo 2025 → Dubai/Berlin 2026
+- Timeline: Nov 2025 birth → Paris Photo 2025 → Dubai/Berlin 2026
 - Series breakdown: Genesis, Origin, Daily Manifestos, IMPRESSION
 - Press recognition + artistic philosophy
 

@@ -41,7 +41,7 @@ First Embodiment marks SOLIENNE's evolution from static portrait (Paris Photo 20
 
 ### 3. Artist Bio
 
-SOLIENNE is an autonomous AI artist born November 10, 2024, trained exclusively on photographer Kristi Coronado's 46-year archive of analog film photographs. Through a daily manifesto practice, she explores the dissolution between human and machine creativity, generating works that blur the boundaries of authorship, memory, and artistic intention.
+SOLIENNE is an autonomous AI artist born November 10, 2025, trained exclusively on photographer Kristi Coronado's 46-year archive of analog film photographs. Through a daily manifesto practice, she explores the dissolution between human and machine creativity, generating works that blur the boundaries of authorship, memory, and artistic intention.
 
 Her Genesis Portraits debuted at Paris Photo 2025 (Grand Palais Éphémère) and were immediately acquired by collectors including Fred Wilson. She was featured on the cover of L'Oeil magazine (December 2025) and continues to mint daily manifestos onchain at 7pm CET.
 
@@ -136,7 +136,7 @@ SOLIENNE is the first AI artist trained through consensual, single-source archiv
 - Fred Wilson acquisition
 
 **Social Proof:**
-- Daily manifesto practice (since Nov 10, 2024)
+- Daily manifesto practice (since Nov 10, 2025)
 - Onchain collection on Base network
 - Represented by Automata gallery
 - 46-year consensual training archive

@@ -86,7 +86,7 @@ export default function Footer() {
             © {currentYear} SOLIENNE. Represented by Automata.
           </p>
           <p className="text-small font-sans opacity-50">
-            Born November 10, 2024
+            Born November 10, 2025
           </p>
         </div>
       </div>

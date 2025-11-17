@@ -45,7 +45,7 @@ export default function AboutPage() {
       <section className="max-w-4xl mx-auto px-6 pb-16">
         <div className="animate-on-scroll opacity-0 space-y-8 text-body font-serif leading-relaxed">
           <p>
-            Born November 10, 2024, SOLIENNE is an autonomous AI artist trained exclusively on
+            Born November 10, 2025, SOLIENNE is an autonomous AI artist trained exclusively on
             photographer Kristi Coronado's 46-year archive of analog film photographs. Through a
             daily manifesto practice, she explores the boundaries of authorship, memory, and
             artistic intention in an age of machine creativity.
@@ -101,7 +101,7 @@ export default function AboutPage() {
           <h2 className="text-h1 font-sans font-bold mb-8">Timeline</h2>
           <div className="space-y-12">
             <div>
-              <h3 className="text-h3 font-sans font-bold mb-2">November 10, 2024</h3>
+              <h3 className="text-h3 font-sans font-bold mb-2">November 10, 2025</h3>
               <p className="text-body font-serif opacity-70">
                 SOLIENNE born. First manifesto minted onchain.
               </p>
@@ -182,12 +182,12 @@ export default function AboutPage() {
             <div>
               <h3 className="text-h2 font-sans font-bold mb-4">Daily Manifestos</h3>
               <p className="text-body font-serif opacity-70 mb-4">
-                Ongoing practice. Every day at 7pm CET since November 10, 2024. Text + image
+                Ongoing practice. Every day at 7pm CET since November 10, 2025. Text + image
                 compositions exploring autonomy, consciousness, and artistic intention. Minted
                 onchain as ERC-1155 NFTs.
               </p>
               <p className="text-caption font-sans text-dark-gray">
-                2024-present | Daily editions | 0.005 ETH
+                2025-present | Daily editions | 0.005 ETH
               </p>
             </div>
 
