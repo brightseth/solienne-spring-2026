@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-white text-black font-serif;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-sans;
+}
+
+/* Fade-in animation for scroll reveals */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Blur effect for images */
+@keyframes blurIn {
+  from {
+    filter: blur(20px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.blur-in {
+  animation: blurIn 1.2s ease-out forwards;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Selection color */
+::selection {
+  background-color: #000;
+  color: #fff;
+}
+
+::-moz-selection {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Loading state */
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Link styles */
+a {
+  @apply transition-smooth;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* Button base styles */
+button {
+  @apply transition-smooth;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Image lazy load placeholder */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
