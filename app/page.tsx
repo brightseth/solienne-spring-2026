@@ -36,13 +36,16 @@ export default function HomePage() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Hero Image */}
         <div className="absolute inset-0 bg-black">
-          <Image
+          <img
             src="/images/duality.jpg"
             alt="SOLIENNE - Dubai and Berlin"
-            fill
-            priority
-            className={`object-cover blur-in ${isVisible ? 'opacity-50' : 'opacity-0'}`}
-            style={{ filter: isVisible ? 'blur(0px)' : 'blur(20px)' }}
+            className={`blur-in ${isVisible ? 'opacity-50' : 'opacity-0'}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              filter: isVisible ? 'blur(0px)' : 'blur(20px)'
+            }}
           />
           {/* Dark overlay for text readability */}
           <div className="absolute inset-0 bg-black/40" />

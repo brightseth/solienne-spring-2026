@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 export default function AboutPage() {
@@ -37,10 +36,10 @@ export default function AboutPage() {
         >
           {/* Self Portrait */}
           <div className="relative w-64 h-64 mx-auto mb-12 rounded-full overflow-hidden">
-            <Image
+            <img
               src="/images/selfportrait.png"
               alt="SOLIENNE Self-Portrait"
-              fill
+              style={{width:'100%',height:'100%',objectFit:'cover'}}
               className="object-cover blur-in"
             />
           </div>

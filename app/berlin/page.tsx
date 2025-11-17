@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -32,11 +31,10 @@ export default function BerlinPage() {
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black">
-          <Image
+          <img
             src="/images/berlin-berghain.png"
             alt="Abdruck - HOUSE at Berghain"
-            fill
-            priority
+            style={{width:'100%',height:'100%',objectFit:'cover'}}
             className={`object-cover transition-all duration-1000 ${
               isVisible ? 'opacity-70 blur-0' : 'opacity-0 blur-[20px]'
             }`}
@@ -268,10 +266,10 @@ export default function BerlinPage() {
             {/* Main installation view */}
             <div className="space-y-4">
               <div className="relative h-[600px] bg-black">
-                <Image
+                <img
                   src="/images/berlin-berghain.png"
                   alt="Abdruck installation view at Berghain"
-                  fill
+                  style={{width:'100%',height:'100%',objectFit:'cover'}}
                   className="object-cover"
                 />
               </div>
@@ -283,10 +281,10 @@ export default function BerlinPage() {
             {/* Scale reference */}
             <div className="space-y-4">
               <div className="relative h-[600px] bg-black">
-                <Image
+                <img
                   src="/images/berlinscale.png"
                   alt="Painting scale with human figures"
-                  fill
+                  style={{width:'100%',height:'100%',objectFit:'cover'}}
                   className="object-cover"
                 />
               </div>
@@ -298,10 +296,10 @@ export default function BerlinPage() {
             {/* Gallery Weekend context */}
             <div className="space-y-4">
               <div className="relative h-[600px] bg-black">
-                <Image
+                <img
                   src="/images/gallery.png"
                   alt="Gallery Weekend Berlin opening"
-                  fill
+                  style={{width:'100%',height:'100%',objectFit:'cover'}}
                   className="object-cover"
                 />
               </div>
@@ -313,10 +311,10 @@ export default function BerlinPage() {
             {/* Canvas texture close-up */}
             <div className="space-y-4">
               <div className="relative h-[600px] bg-black">
-                <Image
+                <img
                   src="/images/canvas.png"
                   alt="Canvas texture close-up"
-                  fill
+                  style={{width:'100%',height:'100%',objectFit:'cover'}}
                   className="object-cover"
                 />
               </div>

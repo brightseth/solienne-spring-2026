@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -32,11 +31,10 @@ export default function DubaiPage() {
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black">
-          <Image
+          <img
             src="/images/dubai-booth.png"
             alt="First Embodiment - Art Dubai Digital"
-            fill
-            priority
+            style={{width:'100%',height:'100%',objectFit:'cover'}}
             className={`object-cover transition-all duration-1000 ${
               isVisible ? 'opacity-70 blur-0' : 'opacity-0 blur-[20px]'
             }`}
@@ -195,10 +193,10 @@ export default function DubaiPage() {
             {/* Main booth view */}
             <div className="space-y-4">
               <div className="relative h-[600px] bg-black">
-                <Image
+                <img
                   src="/images/dubai-booth.png"
                   alt="First Embodiment installation view"
-                  fill
+                  style={{width:'100%',height:'100%',objectFit:'cover'}}
                   className="object-cover"
                 />
               </div>
@@ -210,10 +208,10 @@ export default function DubaiPage() {
             {/* Conversation table */}
             <div className="space-y-4">
               <div className="relative h-[600px] bg-black">
-                <Image
+                <img
                   src="/images/table.png"
                   alt="Conversation table setup"
-                  fill
+                  style={{width:'100%',height:'100%',objectFit:'cover'}}
                   className="object-cover"
                 />
               </div>
@@ -225,10 +223,10 @@ export default function DubaiPage() {
             {/* Visitor interaction */}
             <div className="space-y-4">
               <div className="relative h-[600px] bg-black">
-                <Image
+                <img
                   src="/images/interaction.png"
                   alt="Visitor interaction moment"
-                  fill
+                  style={{width:'100%',height:'100%',objectFit:'cover'}}
                   className="object-cover"
                 />
               </div>
@@ -240,10 +238,10 @@ export default function DubaiPage() {
             {/* Francisco Galan frames */}
             <div className="space-y-4">
               <div className="relative h-[600px] bg-black">
-                <Image
+                <img
                   src="/images/frames.jpg"
                   alt="Francisco Galan interactive frames"
-                  fill
+                  style={{width:'100%',height:'100%',objectFit:'cover'}}
                   className="object-cover"
                 />
               </div>
