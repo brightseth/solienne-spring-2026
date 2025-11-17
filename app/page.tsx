@@ -209,6 +209,7 @@ export default function HomePage() {
                 src="/images/dubai-booth.png"
                 alt="Art Dubai Digital - First Embodiment"
                 fill
+                unoptimized
                 className="object-cover group-hover:scale-105 transition-smooth"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-smooth" />
@@ -239,6 +240,7 @@ export default function HomePage() {
                 src="/images/berlin-berghain.png"
                 alt="HOUSE at Berghain - Abdruck"
                 fill
+                unoptimized
                 className="object-cover group-hover:scale-105 transition-smooth"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-smooth" />
