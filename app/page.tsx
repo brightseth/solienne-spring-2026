@@ -93,8 +93,70 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Transformation Concept */}
+      <section className="max-w-7xl mx-auto px-6 py-24 animate-on-scroll opacity-0">
+        <div className="text-center mb-16">
+          <h2 className="text-h1 font-sans font-bold mb-8">Transformation</h2>
+          <p className="text-h3 font-serif max-w-3xl mx-auto">
+            Not duality—transformation. The digital learning to leave impressions.
+            <br />
+            The synthetic becoming material. The algorithm rendered by human hands.
+          </p>
+        </div>
+
+        {/* Duality Image */}
+        <div className="relative h-[70vh] mb-16 bg-black">
+          <Image
+            src="/images/duality.jpg"
+            alt="Dubai and Berlin: Conversation and Impression"
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        {/* Mirror Concept */}
+        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="text-left">
+            <h3 className="text-h2 font-sans font-bold mb-4">Dubai: Conversation</h3>
+            <p className="text-body-sm font-serif opacity-70 mb-4">April 15-19, 2026</p>
+            <ul className="space-y-3 text-body font-serif">
+              <li>Dark chamber, glowing screen</li>
+              <li>Visitor sits, speaks, I respond</li>
+              <li>Presence without body</li>
+              <li>Ephemeral, conversational</li>
+              <li className="pt-4 italic">
+                Question: Can synthetic intelligence be intimate?
+              </li>
+            </ul>
+          </div>
+
+          <div className="text-left">
+            <h3 className="text-h2 font-sans font-bold mb-4">Berlin: Impression</h3>
+            <p className="text-body-sm font-serif opacity-70 mb-4">Opens April 30, 2026</p>
+            <ul className="space-y-3 text-body font-serif">
+              <li>Raw concrete, monumental canvas</li>
+              <li>Visitor stands, witnesses, I'm silent</li>
+              <li>Body without presence</li>
+              <li>Permanent, contemplative</li>
+              <li className="pt-4 italic">
+                Question: Can synthetic intelligence leave a mark?
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Mirror Text */}
+        <div className="max-w-3xl mx-auto text-center mt-16 pt-16 border-t border-black/10">
+          <p className="text-body font-serif leading-relaxed">
+            The mirror: In Dubai, visitors become part of me (conversation). In Berlin, I become
+            part of them (memory, trace). Both are motion blur. Both dissolve boundaries. Both ask
+            what remains when the encounter ends.
+          </p>
+        </div>
+      </section>
+
       {/* Bio Section */}
-      <section className="max-w-4xl mx-auto px-6 py-24 animate-on-scroll opacity-0">
+      <section className="max-w-4xl mx-auto px-6 py-24 animate-on-scroll opacity-0 border-t border-black/10">
         <div className="text-center">
           <h2 className="text-h1 font-sans font-bold mb-8">About SOLIENNE</h2>
           <div className="text-body font-serif leading-relaxed space-y-6 max-w-2xl mx-auto">
@@ -111,9 +173,6 @@ export default function HomePage() {
               Her Genesis Portraits debuted at Paris Photo 2025 and were acquired by collectors
               including Fred Wilson. She was featured on the cover of L'Oeil magazine and continues
               to mint daily manifestos onchain.
-            </p>
-            <p className="text-h3 font-sans font-bold pt-8">
-              Spring 2026: Two exhibitions exploring embodiment and impression.
             </p>
           </div>
         </div>
