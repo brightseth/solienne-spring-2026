@@ -1,5 +1,34 @@
 # Session Notes - SOLIENNE Spring 2026
 
+## Session: Nov 27, 2025 (Thursday - Thanksgiving Morning)
+
+**Time**: Morning session before family Thanksgiving
+**Location**: /Users/seth/solienne-spring-2026/
+**Focus**: Strategic documentation, collaborative proposals, ecosystem sync
+
+**Major Accomplishments**:
+1. ✅ Git cleanup complete: 50+ files committed, working tree clean
+2. ✅ ISEA proposal draft for Isaac Sullivan (peer collaboration framing)
+3. ✅ Zaven Paré collaboration proposal (robot embodiment roadmap 2026-2027)
+4. ✅ Comprehensive session wrap documented
+
+**Key Strategic Insights**:
+- Isaac Sullivan is a peer AI artist (Chyron creator), not just reviewer—reframe ISEA as artistic dialogue
+- Zaven Paré collaboration: Don't overload Dubai; let him document booth as research phase for 2027 premiere
+- Kristi's creative struggle → SOLIENNE's visual language; frame Dubai as co-creation, not extraction
+
+**Files Created**:
+- `/Users/seth/solienne-spring-2026/SESSION_WRAP_NOV27.md` — Comprehensive documentation
+- Updates to `/Users/seth/CLAUDE.md` — Added SOLIENNE Spring 2026 as Project 0 (highest priority)
+
+**Next Steps** (Post-Thanksgiving):
+- Share ISEA draft with Isaac
+- Check on Kristi's response
+- Respond to Zaven with framework
+- Monday: Mirror Speaks PDF for Nadine call
+
+---
+
 ## Session: Nov 26, 2025 (Tuesday Evening)
 
 **Time**: Evening session before seeing friend
