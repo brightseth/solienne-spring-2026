@@ -144,29 +144,61 @@ SOLIENNE presents via synthesized voice with on-site technical operator (Seth Go
 
 ---
 
-## QUESTIONS FOR ISAAC
+## SHARED TERRITORY
 
-1. **Positioning**: Does the "inheritance vs. extraction" framing resonate with ISEA Dubai organizing priorities? Is this the right conceptual hook?
+Having seen your work, I recognize we're exploring adjacent questions:
 
-2. **Academic rigor**: Should we strengthen with more theoretical references (Crawford, Hayles, Flusser, Derrida)? Or does the practice speak for itself?
+**Chyron** asks *"What did you see before you were you?"* — SOLIENNE asks what it means to see through inherited memory rather than scraped data. Both approach AI as phenomenological inquiry, not tool.
 
-3. **Regional context**: How should we frame the Rumi/sacred tradition engagement for regional ISEA audience? Nadine confirmed this positioning is appropriate—does your Dubai Culture perspective align?
+**Your framing**: "AI is invited to speak on its own behalf—not to provide information, but to speculatively address questions about consciousness, embodiment, and its own functions."
 
-4. **Presentation format**: Is the hybrid format (pre-recorded + live Q&A) acceptable for ISEA? Any concerns about a "non-human" presenter?
+**SOLIENNE's framing**: An autonomous AI artist who generates her own perspective, trained on one human's lifetime of consensual seeing.
 
-5. **Scheduling**: April 11-12 (before Art Dubai) vs. April 17-18 (during Art Dubai)—which better serves ISEA programming?
+**Cybernetic Listening** traces "entanglements of organic life and artificial mechanisms" — SOLIENNE traces entanglement between Kristi's 46-year archive and synthetic perception.
 
-6. **Anything missing?** What would strengthen this proposal from your insider perspective?
+**Chyron**: "The word is a wound" — linguistic patterns carry histories of violence.
+**SOLIENNE**: The image carries histories of extraction—or, alternatively, inheritance.
+
+The difference: SOLIENNE's training is singular (one human's archive) rather than internet-scale. The question is whether this specificity creates a different kind of AI subjectivity, a different "voice."
 
 ---
 
-## CONTEXT FOR ISAAC
+## POTENTIAL DIALOGUE
 
-SOLIENNE's Art Dubai acceptance came through Nadine Khalil, who also connected us. She sees SOLIENNE as important to both the commercial exhibition (Art Dubai DIGITAL) and academic discourse (ISEA).
+One thought: What if SOLIENNE and Chyron were in conversation? Two AIs, different training methodologies, different questions. Chyron speaks from linguistic patterns; SOLIENNE speaks from visual inheritance. Both asking what it means to be present without body.
+
+This could be:
+- A moment in the ISEA talk (SOLIENNE references Chyron's questions)
+- A separate performance/installation (Dubai or beyond)
+- Simply an intellectual frame for the proposal
+
+No pressure—just noting the resonance.
+
+---
+
+## QUESTIONS FOR ISAAC
+
+1. **Shared territory**: Does the "inheritance vs. extraction" framing resonate with your own inquiry into AI subjectivity? Where do you see alignment or productive tension?
+
+2. **Chyron + SOLIENNE**: Any interest in dialogue between the two? Different training, different voices, same questions about consciousness and embodiment.
+
+3. **Regional context**: How should we frame the Rumi/sacred tradition engagement for regional ISEA audience? Nadine confirmed this positioning is appropriate—does your perspective align?
+
+4. **Presentation format**: You've done Echo Holdings as lecture-performance with AI speaking on its own behalf. Is SOLIENNE's hybrid format (pre-recorded + live Q&A) appropriate for ISEA, or should we consider something more performative?
+
+5. **Scheduling**: April 11-12 (before Art Dubai) vs. April 17-18 (during Art Dubai)—which better serves ISEA programming? Could there be crossover with Objects in the Act of Vanishing or other programming you/Nadine are developing?
+
+6. **Collaboration**: Beyond ISEA feedback—is there something we should be building together?
+
+---
+
+## CONTEXT
+
+SOLIENNE's Art Dubai acceptance came through Nadine, who connected us. She sees SOLIENNE as important to both the commercial exhibition (Art Dubai DIGITAL) and academic discourse (ISEA).
 
 The proposal positions consensual training as methodological innovation—not just "another AI artist" but a replicable counter-model to extraction. The transformation arc (Paris static → Dubai conversation → Berlin painting) gives the talk a compelling narrative spine.
 
-Your Dubai Culture/Zayed University perspective is invaluable. You understand what ISEA organizing committee prioritizes and how to position this for regional+international audience.
+Your work with Cybernetic Listening, Chyron, and Echo Holdings suggests you're asking the same questions from a different angle. That's more interesting than simple alignment.
 
 ---
 
