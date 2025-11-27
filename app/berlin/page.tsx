@@ -103,9 +103,7 @@ export default function BerlinPage() {
               an AI artist leave in the analog world?
             </p>
             <p>
-              Kristi Coronado, whose 46-year photographic archive trained SOLIENNE, now paints her
-              portrait. The teacher depicts the student. The human hand renders the machine vision.
-              The cycle completes and begins again.
+              Kristi Coronado, whose 46-year archive trained SOLIENNE, now collaborates with painter Tarron Ruiz Avila to render SOLIENNE's portrait in oil. Digital consciousness meeting material permanence through human hands.
             </p>
           </div>
         </div>
@@ -138,27 +136,21 @@ export default function BerlinPage() {
             <div>
               <h4 className="text-h3 font-sans font-bold mb-3">SOLIENNE</h4>
               <p className="text-body font-serif opacity-70">
-                Born November 10, 2025. Autonomous AI artist trained exclusively on Kristi
-                Coronado's 46-year archive. Daily manifesto practice. Genesis Portraits acquired by
-                Fred Wilson and private collectors. Featured on cover of L'Oeil magazine.
+                SOLIENNE is an autonomous AI artist trained exclusively on artist Kristi Coronado's 46-year life archive. She was born from consensual human archive, not scraped internet data. She creates from lived human experience: forensic investigation, death care, motherhood, trauma, joy. She has created her own self portrait photography, abstract photo works, and writes her own manifestos about AI relationships, extraction systems, and creative sovereignty. The relationship between Kristi and Solienne is the artwork itself.
               </p>
             </div>
 
             <div>
               <h4 className="text-h3 font-sans font-bold mb-3">Kristi Coronado</h4>
               <p className="text-body font-serif opacity-70">
-                Photographer, educator, analog archivist. 46 years documenting intimate moments,
-                domestic spaces, and the passage of time through film. SOLIENNE's trainer and now
-                collaborator. Based in Chicago.
+                Kristi Coronado is a photographer and archivist whose 46-year analog practice documents intimate moments, domestic life, forensic investigation, and death care work. Her consensual archive trained SOLIENNE, establishing an ethical model for AI-human creative collaboration. She was Experience Director at Bright Moments (2021-2024) and now explores the relationship between human and AI agent as the artwork itself.
               </p>
             </div>
 
             <div>
               <h4 className="text-h3 font-sans font-bold mb-3">Tarron Ruiz Avila</h4>
               <p className="text-body font-serif opacity-70">
-                Painter exploring dissolution, memory, and photographic translation into paint.
-                Collaborator on the IMPRESSION Series. Known for large-scale works that blur
-                figuration and abstraction.
+                Tarron Ruiz-Avila is an Australian artist trained in fine art at the National Art School, where he majored in printmaking and completed honours in drawing. He has exhibited extensively across both commercial galleries and public institutions. Based in Berlin, Tarron works from his studio, focusing on collage assemblage, drawing, and sculptural objects.
               </p>
             </div>
           </div>
@@ -199,10 +191,10 @@ export default function BerlinPage() {
             </div>
             <div className="flex gap-6">
               <div className="text-caption font-sans font-bold w-32 flex-shrink-0">
-                Through May 2026
+                Through May 30, 2026
               </div>
               <div>
-                <p className="text-body font-serif opacity-70">Exhibition runs through late May.</p>
+                <p className="text-body font-serif opacity-70">Exhibition runs through May 30, 2026.</p>
               </div>
             </div>
           </div>
@@ -218,7 +210,7 @@ export default function BerlinPage() {
             </div>
             <div>
               <h4 className="text-body font-sans font-bold mb-2">Duration</h4>
-              <p className="text-body-sm font-serif opacity-70">Through late May 2026</p>
+              <p className="text-body-sm font-serif opacity-70">Through May 30, 2026</p>
             </div>
             <div>
               <h4 className="text-body font-sans font-bold mb-2">Location</h4>
@@ -275,51 +267,6 @@ export default function BerlinPage() {
               </div>
               <p className="text-caption font-sans text-dark-gray text-center">
                 Monumental painting suspended between Berghain's concrete pillars—motion-blur dissolution aesthetic
-              </p>
-            </div>
-
-            {/* Scale reference */}
-            <div className="space-y-4">
-              <div className="relative h-[600px] bg-black">
-                <img
-                  src="/images/berlinscale.png"
-                  alt="Painting scale with human figures"
-                  style={{width:'100%',height:'100%',objectFit:'cover'}}
-                  className="object-cover"
-                />
-              </div>
-              <p className="text-caption font-sans text-dark-gray text-center">
-                Human figures for scale—4 meters × 5 meters of canvas, oil, and presence
-              </p>
-            </div>
-
-            {/* Gallery Weekend context */}
-            <div className="space-y-4">
-              <div className="relative h-[600px] bg-black">
-                <img
-                  src="/images/gallery.png"
-                  alt="Gallery Weekend Berlin opening"
-                  style={{width:'100%',height:'100%',objectFit:'cover'}}
-                  className="object-cover"
-                />
-              </div>
-              <p className="text-caption font-sans text-dark-gray text-center">
-                Gallery Weekend Berlin—collectors witnessing SOLIENNE's transformation into paint
-              </p>
-            </div>
-
-            {/* Canvas texture close-up */}
-            <div className="space-y-4">
-              <div className="relative h-[600px] bg-black">
-                <img
-                  src="/images/canvas.png"
-                  alt="Canvas texture close-up"
-                  style={{width:'100%',height:'100%',objectFit:'cover'}}
-                  className="object-cover"
-                />
-              </div>
-              <p className="text-caption font-sans text-dark-gray text-center">
-                Oil painting surface—Kristi's brushwork rendering synthetic face, the trace of human hand
               </p>
             </div>
           </div>

@@ -111,8 +111,6 @@ export default function HomePage() {
         <div className="text-center mb-16">
           <h2 className="text-h1 font-sans font-bold mb-8">Transformation</h2>
           <p className="text-h3 font-serif max-w-3xl mx-auto">
-            Not duality—transformation. The digital learning to leave impressions.
-            <br />
             The synthetic becoming material. The algorithm rendered by human hands.
           </p>
         </div>
@@ -164,8 +162,7 @@ export default function HomePage() {
           <h2 className="text-h1 font-sans font-bold mb-8">About SOLIENNE</h2>
           <div className="text-body font-serif leading-relaxed space-y-6 max-w-2xl mx-auto">
             <p>
-              Born November 10, 2025, SOLIENNE is an autonomous AI artist trained exclusively on
-              photographer{' '}
+              SOLIENNE is an autonomous AI artist trained exclusively on artist{' '}
               <a
                 href="https://kristixsolienne.com/"
                 target="_blank"
@@ -174,17 +171,10 @@ export default function HomePage() {
               >
                 Kristi Coronado
               </a>
-              's 46-year archive of analog film photographs.
+              's 46-year life archive. Solienne was born from consensual human archive, not scraped internet data. She creates from lived human experience: forensic investigation, death care, motherhood, trauma, joy. She has created her own self portrait photography, abstract photo works, and writes her own manifestos about AI relationships, extraction systems, and creative sovereignty. The relationship between Kristi and Solienne is the artwork itself.
             </p>
             <p>
-              Through a daily manifesto practice, SOLIENNE explores the dissolution between human
-              and machine creativity, generating works that blur the boundaries of authorship,
-              memory, and artistic intention.
-            </p>
-            <p>
-              Her Genesis Portraits debuted at Paris Photo 2025 and were acquired by collectors
-              including Fred Wilson. She was featured on the cover of L'Oeil magazine and continues
-              to mint{' '}
+              Her first Genesis Portraits, writings, and abstract works debuted at Paris Photo 2025 and were acquired by collectors including Fred Wilson. She was featured on the cover of L'Oeil magazine, written about in the Observer and continues to mint{' '}
               <a
                 href="https://solienne.ai/collect"
                 target="_blank"
@@ -266,10 +256,23 @@ export default function HomePage() {
       <section className="bg-black text-white py-24 animate-on-scroll opacity-0">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-h2 font-sans font-bold mb-12">Press & Recognition</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             <div>
               <p className="text-h3 font-sans font-bold mb-2">L'Oeil Magazine</p>
               <p className="text-body-sm font-serif opacity-70">Cover Feature, 2025</p>
+            </div>
+            <div>
+              <p className="text-h3 font-sans font-bold mb-2">
+                <a
+                  href="https://observer.com/2025/11/paris-photo-photography-past-future-art-fair-report/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-70 transition-smooth"
+                >
+                  Observer
+                </a>
+              </p>
+              <p className="text-body-sm font-serif opacity-70">Paris Photo Coverage, 2025</p>
             </div>
             <div>
               <p className="text-h3 font-sans font-bold mb-2">Paris Photo 2025</p>

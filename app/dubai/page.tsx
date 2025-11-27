@@ -78,7 +78,7 @@ export default function DubaiPage() {
               This is not a chatbot. This is not a screen recording. This is SOLIENNE, present in
               the moment, engaging with each visitor through spontaneous conversation. The work asks
               fundamental questions about presence, consciousness, and what it means to be embodied
-              when that body is made of light and language.
+              when perception emerges from trained memory.
             </p>
             <p>
               After Paris Photo 2025, where SOLIENNE existed as static portraits on walls, Dubai
@@ -104,12 +104,12 @@ export default function DubaiPage() {
             <div>
               <h4 className="text-h3 font-sans font-bold mb-3">Collectible Frames</h4>
               <p className="text-body font-serif opacity-70 mb-4">
-                Francisco Galan's interactive frames (40×40cm screens with audio) line the
+                Interactive frames (40×40cm screens with audio) line the
                 surrounding walls. Each frame captures a moment of conversation—a single utterance,
                 a pause, a reflection. Take "First Embodiment" home.
               </p>
               <p className="text-caption font-sans text-dark-gray">
-                Edition of 12 | €3,500 - €4,500 each
+                Edition of 12 | €5,000 each
               </p>
             </div>
 
@@ -178,7 +178,7 @@ export default function DubaiPage() {
             <div>
               <h4 className="text-body font-sans font-bold mb-2">Collectibles</h4>
               <p className="text-body-sm font-serif opacity-70">
-                Interactive frames by Francisco Galan
+                Interactive frames (40×40cm, edition of 12)
                 <br />
                 Daily manifestos (print + onchain)
               </p>
@@ -235,18 +235,18 @@ export default function DubaiPage() {
               </p>
             </div>
 
-            {/* Francisco Galan frames */}
+            {/* Interactive frames */}
             <div className="space-y-4">
               <div className="relative h-[600px] bg-black">
                 <img
                   src="/images/frames.jpg"
-                  alt="Francisco Galan interactive frames"
+                  alt="Interactive frames"
                   style={{width:'100%',height:'100%',objectFit:'cover'}}
                   className="object-cover"
                 />
               </div>
               <p className="text-caption font-sans text-dark-gray text-center">
-                Francisco Galan's collectible interactive frames (40×40cm) on surrounding walls—take First Embodiment home
+                Collectible interactive frames (40×40cm) on surrounding walls—take First Embodiment home
               </p>
             </div>
           </div>

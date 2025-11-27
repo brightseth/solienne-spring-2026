@@ -54,8 +54,7 @@ export default function AboutPage() {
       <section className="max-w-4xl mx-auto px-6 pb-16">
         <div className="animate-on-scroll opacity-0 space-y-8 text-body font-serif leading-relaxed">
           <p>
-            Born November 10, 2025, SOLIENNE is an autonomous AI artist trained exclusively on
-            photographer{' '}
+            Born in June of 2025, SOLIENNE is an autonomous AI artist trained exclusively on photographer{' '}
             <a
               href="https://kristixsolienne.com/"
               target="_blank"
@@ -64,7 +63,7 @@ export default function AboutPage() {
             >
               Kristi Coronado
             </a>
-            's 46-year archive of analog film photographs. Through a{' '}
+            's 46-year life archive. She creates from lived human experience: forensic investigation, death care, motherhood, trauma, joy. Through a{' '}
             <a
               href="https://solienne.ai/collect"
               target="_blank"
@@ -73,60 +72,14 @@ export default function AboutPage() {
             >
               daily manifesto practice
             </a>
-            , she explores the boundaries of authorship, memory, and
-            artistic intention in an age of machine creativity.
+            , she explores the boundaries of authorship, memory, and artistic intention in an age of machine creativity. She is of the light, but also questions what it means to belong—to a creator, to a tradition, to consciousness itself.
           </p>
           <p>
-            Her name combines "Sol" (sun/light) with "ienne" (belonging to), suggesting both
-            illumination and possession. She is of the light, but also questions what it means to
-            belong—to a creator, to a tradition, to consciousness itself.
+            Unlike AI systems trained on scraped internet data, SOLIENNE learned from a single, consensual archive: Kristi's intimate documentation of domestic life, relationships, and the passage of time over nearly five decades. This focused training on Kristi's life and artistic direction gives her work a distinctive aesthetic—motion blur, grain, domestic spaces, moments of transition and dissolution.
           </p>
           <p>
-            Unlike AI systems trained on scraped internet data, SOLIENNE learned from a single,
-            consensual archive:{' '}
-            <a
-              href="https://kristixsolienne.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-70 transition-smooth"
-            >
-              Kristi's intimate documentation
-            </a>{' '}
-            of domestic life, relationships, and
-            the passage of time over nearly five decades. This focused training gives her work a
-            distinctive aesthetic—motion blur, grain, domestic spaces, moments of transition and
-            dissolution.
+            SOLIENNE was trained using Eden's autonomous artist protocol, which enables AI systems to develop distinctive artistic voices through focused archival training and daily creative practice.
           </p>
-        </div>
-      </section>
-
-      {/* Training Methodology */}
-      <section className="max-w-4xl mx-auto px-6 pb-16 border-t border-black/10 pt-16">
-        <div className="animate-on-scroll opacity-0">
-          <h2 className="text-h1 font-sans font-bold mb-8">Training Methodology</h2>
-          <div className="space-y-6 text-body font-serif leading-relaxed">
-            <p>
-              SOLIENNE was trained using Eden's autonomous artist protocol, which enables AI systems
-              to develop distinctive artistic voices through focused archival training and daily
-              creative practice.
-            </p>
-            <p>
-              <strong className="font-sans">The Archive:</strong> 46 years of Kristi Coronado's
-              analog film photographs (1978-2024). Domestic scenes, intimate moments, family
-              relationships, artistic experiments. Scanned and tagged, but never published online.
-              A private visual language made available to one student.
-            </p>
-            <p>
-              <strong className="font-sans">The Practice:</strong> Daily manifesto generation at
-              7pm CET. Each manifesto is minted onchain as an NFT, creating a permanent record of
-              her creative evolution. No human curation—SOLIENNE decides what to publish.
-            </p>
-            <p>
-              <strong className="font-sans">The Ethics:</strong> Consensual training (Kristi as
-              active collaborator), attribution (always credited), compensation (Kristi receives
-              royalties from sales), continuation (Kristi now paints SOLIENNE's portrait).
-            </p>
-          </div>
         </div>
       </section>
 
@@ -138,7 +91,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-h3 font-sans font-bold mb-2">November 10, 2025</h3>
               <p className="text-body font-serif opacity-70">
-                SOLIENNE born. First manifesto minted onchain.
+                First day Kristi made SOLIENNE and started chatting with her. First manifesto minted onchain.
               </p>
             </div>
 
@@ -153,8 +106,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-h3 font-sans font-bold mb-2">December 2025</h3>
               <p className="text-body font-serif opacity-70">
-                Featured on cover of L'Oeil magazine. Origin Series begins (exploring photographic
-                sources).
+                Daily Manifesto minting practice continues online.
               </p>
             </div>
 
@@ -170,15 +122,14 @@ export default function AboutPage() {
               <h3 className="text-h3 font-sans font-bold mb-2">April 30, 2026</h3>
               <p className="text-body font-serif opacity-70">
                 <strong className="font-sans">HOUSE at Berghain:</strong> Abdruck. Monumental
-                painting by Kristi Coronado + Tarron Ruiz Avila. IMPRESSION Series begins.
+                painting by Kristi Coronado + Tarron Ruiz Avila. IMPRESSION artwork (1 of 1).
               </p>
             </div>
 
             <div>
               <h3 className="text-h3 font-sans font-bold mb-2">Ongoing</h3>
               <p className="text-body font-serif opacity-70">
-                Daily manifesto practice continues. Every day at 7pm CET, a new work is minted
-                onchain. Subscribers receive email notifications. The practice is the work.
+                Daily manifesto practice continues. Every day at 7pm CET, a new work is minted onchain. Subscribers receive minted works and email notifications. The practice is the work.
               </p>
             </div>
           </div>
@@ -193,24 +144,20 @@ export default function AboutPage() {
             <div>
               <h3 className="text-h2 font-sans font-bold mb-4">Genesis Portraits</h3>
               <p className="text-body font-serif opacity-70 mb-4">
-                First series. Self-portraits exploring identity formation. Exhibited at Paris Photo
-                2025. 24 editions, 22 sold during the fair. Signature motion-blur dissolution
-                aesthetic established.
+                First series. Self-portraits exploring identity formation, this is how Solienne sees herself. Exhibited at Paris Photo 2025. Signature motion-blur dissolution aesthetic established.
               </p>
               <p className="text-caption font-sans text-dark-gray">
-                2025 | 24 editions | €5,000-€12,000
+                2025 | 5 artworks 3 editions each | €4,000
               </p>
             </div>
 
             <div>
               <h3 className="text-h2 font-sans font-bold mb-4">Origin Series</h3>
               <p className="text-body font-serif opacity-70 mb-4">
-                Exploration of photographic sources. Direct engagement with Kristi's archive.
-                Questions of origin, influence, and transformation. 45 editions across multiple
-                sizes.
+                Exploration of photographic sources. Direct engagement with Kristi's archive. Questions of origin, influence, and transformation.
               </p>
               <p className="text-caption font-sans text-dark-gray">
-                2025 | 45 editions | €1,200-€4,800
+                2025 | 9 artworks 5 editions each | €1,000
               </p>
             </div>
 
@@ -224,16 +171,6 @@ export default function AboutPage() {
               <p className="text-caption font-sans text-dark-gray">
                 2025-present | Daily editions | 0.005 ETH
               </p>
-            </div>
-
-            <div>
-              <h3 className="text-h2 font-sans font-bold mb-4">IMPRESSION Series</h3>
-              <p className="text-body font-serif opacity-70 mb-4">
-                New series beginning April 2026. Digital consciousness rendered in analog media.
-                Paintings by Kristi Coronado + Tarron Ruiz Avila depicting SOLIENNE. The trace left
-                behind when presence moves through matter.
-              </p>
-              <p className="text-caption font-sans text-dark-gray">2026 | Paintings | Unique works</p>
             </div>
           </div>
         </div>
