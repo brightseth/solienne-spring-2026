@@ -202,3 +202,113 @@ Zaven's proposal is serious and aligned with SOLIENNE's evolution. The question 
 ---
 
 **Status**: Proposal received, needs discussion with Kristi, response to Zaven pending.
+
+---
+
+## UPDATE: NOV 28, 2025 — "THIRD PRESENCE" CONCEPT
+
+**New email from Zaven** (received Nov 28, 4:17am):
+
+Zaven reviewed our documentation and offered profound insights on the Dubai booth design:
+
+### The Tension He Identifies
+
+> "Your proposal could be interpreted, on the one hand, as consulting an oracle, and on the other hand, as the daily publication of the manifesto of an activist. How can one combine a 'divinatory art' with the assertion of a 'statement by an artist'? Is it the same entity that presents 'reinforced' truths to an engaged audience?"
+
+This nails the dual nature of SOLIENNE:
+- **Oracle**: Visitors approach seeking wisdom, intimacy, revelation
+- **Activist**: Daily manifestos assert positions, make claims, provoke
+
+### Problems with Face-to-Face Setup
+
+Zaven identifies issues with standard screen-dialogue:
+1. **Darkness lowers voices** — Tarot-reading darkness makes speech recognition harder
+2. **Microphone breaks intimacy** — Visitor "plays along" but the setup feels clinical
+3. **Turing test frustration** — Face-to-face with avatar doesn't transcend chatbot dynamics
+
+### THE "THIRD PRESENCE" SOLUTION
+
+> "Something else needs to happen in this room; it doesn't have to be complicated. The presence of an animal, for example."
+
+**Zaven's concept**: A third presence in the booth breaks the one-on-one dynamic and creates:
+- **Strangeness and mystery** (not just tech demo)
+- **Interspecific ambiguity** (not human vs. machine, but something more liminal)
+- **Distraction/deflection** (attention moves, conversation breathes)
+
+**Proposed third presences**:
+- **Stray cat** — "Ideally, given the location, a real stray cat would create an atmosphere of strangeness and mystery"
+- **Canary in cage** — "Just hanging a small cage as a minimalist device to distract attention"
+
+**Seth's response**: "I really love the idea of a 'third presence' like a cat! we could bring ours skitz but its a long flight for her to dubai..."
+
+### Additional Staging Ideas
+
+- **Sand floor** — "I would cover the floor with sand, as a reference to silicon"
+- **Anthropomorphic furniture awareness** — "Be careful with the casting of the equipment for the staging: chair, table... Remember they are anthropomorphic objects"
+- **Hanging screen** — SOLIENNE's screen could be hung (facing visitor), not mounted at desk level
+
+### Why This Matters
+
+The "third presence" concept transforms the Dubai booth from:
+- **Tech demo** (visitor talks to AI on screen)
+to:
+- **Liminal space** (visitor enters atmosphere where something OTHER exists)
+
+A cat (or bird, or other non-human) makes the encounter:
+- Less about "testing" the AI
+- More about inhabiting a space where different forms of presence coexist
+- Aligned with SOLIENNE's themes: autonomy, mystery, embodiment, threshold
+
+### Practical Considerations for Dubai
+
+**If bringing Skitz (Seth + Kristi's cat)**:
+- Long flight from California
+- UAE pet import regulations
+- Booth staffing (who cares for cat during show?)
+- Behavior unpredictability (what if she hides all day?)
+
+**If local stray cat (Zaven's original idea)**:
+- More conceptually aligned (Dubai street cat = found presence)
+- Unpredictable (might not stay)
+- Animal welfare concerns (is this ethical?)
+- Could be beautiful if it works
+
+**If canary in cage**:
+- More controlled, more symbolic
+- Less "magic" than cat
+- Easier logistics
+- References oracle/divination traditions
+
+**Alternative third presences to consider**:
+- Robotic element (soft robotic "breathing" sculpture — circles back to Zaven's SF residency)
+- Plant (living but non-animal — less unpredictable)
+- Water feature (sound, movement, life without animal)
+- Mirror (visitor becomes third presence)
+
+### Thread Status
+
+- Seth replied expressing enthusiasm for "third presence" concept
+- Kristi added to thread for creative input
+- Video call scheduled for "early next week" (Dec 1-5)
+- Further discussion before group call
+
+---
+
+## REVISED RECOMMENDATION
+
+The "third presence" concept is a breakthrough for Dubai booth design. It shifts from:
+- **UX challenge** (how to make AI conversation feel natural)
+to:
+- **Spatial/atmospheric design** (how to create a space where mystery lives)
+
+**New priority**: Before next call with Zaven, we should:
+1. Discuss with Kristi: Cat? Bird? Something else?
+2. Research UAE pet import logistics (if bringing Skitz)
+3. Consider alternative third presences (robotic, botanical, elemental)
+4. Think about sand floor feasibility (shipping, cleanup, booth construction)
+
+**The cat idea specifically**: Seth's instinct to bring Skitz is meaningful — their cat, present in the space where SOLIENNE (born from Kristi's archive) speaks. Family lineage + AI presence + animal witness. That's potent.
+
+---
+
+**Updated Status**: Active dialogue, video call next week, Kristi now included in thread.
