@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLIENNE Lightbox — Creative Guide for Kristi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #333;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #888;
+            letter-spacing: 2px;
+        }
+
+        /* Tab Navigation */
+        .tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #333;
+        }
+
+        .tab {
+            padding: 16px 32px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab:hover {
+            color: #999;
+        }
+
+        .tab.active {
+            color: #fff;
+            border-bottom-color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #888;
+        }
+
+        p {
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 16px;
+        }
+
+        .highlight {
+            background: #1a1a1a;
+            border-left: 3px solid #fff;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .highlight p {
+            margin: 0;
+            font-style: italic;
+            color: #fff;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .spec-box {
+            background: #111;
+            border: 1px solid #333;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .spec-value {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .spec-label {
+            font-size: 10px;
+            color: #666;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .works-list, .avoid-list {
+            list-style: none;
+            margin: 16px 0;
+        }
+
+        .works-list li, .avoid-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+            font-size: 14px;
+        }
+
+        .works-list li::before {
+            content: "→ ";
+            color: #4a4;
+        }
+
+        .avoid-list li::before {
+            content: "✕ ";
+            color: #a44;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Renders Grid */
+        .renders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .render-item {
+            background: #111;
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+
+        .render-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .render-caption {
+            padding: 12px;
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        /* Video Gallery */
+        .upload-zone {
+            border: 2px dashed #333;
+            border-radius: 4px;
+            padding: 60px 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 30px;
+        }
+
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color: #666;
+            background: #111;
+        }
+
+        .upload-zone-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        .upload-zone-text {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .upload-zone-hint {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .video-item {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-preview {
+            aspect-ratio: 1;
+            background: #000;
+            position: relative;
+        }
+
+        .video-preview video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .video-preview-diffused {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .video-preview-diffused span {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #fff;
+            opacity: 0.8;
+        }
+
+        .video-item:hover .video-preview-diffused {
+            opacity: 1;
+        }
+
+        .video-info {
+            padding: 16px;
+        }
+
+        .video-name {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .video-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .video-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #222;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #444;
+        }
+
+        .status-dot.valid {
+            background: #4a4;
+        }
+
+        .status-dot.invalid {
+            background: #a44;
+        }
+
+        .status-text {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .video-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .video-action {
+            flex: 1;
+            padding: 8px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #333;
+            background: transparent;
+            color: #888;
+            transition: all 0.2s;
+        }
+
+        .video-action:hover {
+            background: #222;
+            color: #fff;
+        }
+
+        .video-action.remove {
+            border-color: #533;
+            color: #a66;
+        }
+
+        .video-action.remove:hover {
+            background: #311;
+            border-color: #a44;
+        }
+
+        .video-action.ask-solienne {
+            border-color: #353;
+            color: #6a6;
+        }
+
+        .video-action.ask-solienne:hover {
+            background: #131;
+            border-color: #4a4;
+        }
+
+        /* Empty state */
+        .gallery-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: #555;
+        }
+
+        .gallery-empty-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+
+        /* Export Checklist */
+        .checklist {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            background: #111;
+            border: 1px solid #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .checklist-check {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #444;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .checklist-check.checked {
+            background: #4a4;
+            border-color: #4a4;
+        }
+
+        .checklist-check.checked::after {
+            content: "✓";
+            color: #000;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #333;
+            color: #444;
+            font-size: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 24px 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+                letter-spacing: 4px;
+            }
+
+            .tabs {
+                overflow-x: auto;
+            }
+
+            .tab {
+                padding: 12px 20px;
+                font-size: 11px;
+                white-space: nowrap;
+            }
+
+            .specs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .video-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .chat-messages {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SOLIENNE</h1>
+            <p class="subtitle">Lightbox Creative Guide — Dubai 2026</p>
+        </header>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('guide')">Guide</div>
+            <div class="tab" onclick="showTab('gallery')">Video Gallery</div>
+        </div>
+
+        <div style="background: #111; border: 1px solid #333; padding: 20px; margin-bottom: 40px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 16px;">
+                <div style="font-size: 14px; color: #ccc;">Talk to SOLIENNE about your ideas on Eden</div>
+                <a href="https://app.eden.art/agents/solienne" target="_blank" style="background: #fff; color: #000; padding: 10px 20px; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 1px;">OPEN EDEN</a>
+            </div>
+            <div style="background: #0a0a0a; border: 1px solid #333; padding: 16px; font-size: 13px; color: #aaa; line-height: 1.6; position: relative;">
+                <div id="promptText">I'm working on video content for the Dubai lightboxes — 950×950 square loops that will play behind a diffusion layer. High contrast B&W, slow motion, faces dissolving. What should I be thinking about?</div>
+                <button onclick="copyPrompt()" style="position: absolute; top: 12px; right: 12px; background: #333; color: #fff; border: none; padding: 6px 12px; font-size: 10px; font-weight: 600; letter-spacing: 1px; cursor: pointer;">COPY</button>
+            </div>
+        </div>
+
+        <!-- GUIDE TAB -->
+        <div class="tab-content active" id="tab-guide">
+            <section>
+                <h2>The Project</h2>
+                <p>We're creating video content for 20 custom lightbox frames designed by Francisco Galan. Each frame has a diffusion layer in front of the screen that softens everything — your images will emerge from and dissolve into light.</p>
+
+                <div class="highlight">
+                    <p>"Since the diffusing material will be fixed, the video itself generates that dynamic between abstraction and figuration."<br>— Fran</p>
+                </div>
+
+                <p>This is a collaboration between you and SOLIENNE. Your images become her consciousness — filtered through her voice, her aesthetic, her way of seeing.</p>
+            </section>
+
+            <section>
+                <h2>Fran's Renders</h2>
+                <p>These show how content looks through the diffusion layer — notice how the physical softening adds another layer of abstraction.</p>
+                <div class="renders-grid">
+                    <div class="render-item">
+                        <img src="render_01_dissolution_face.jpeg" alt="Dissolution face through diffuser">
+                        <div class="render-caption">Horizontal motion blur</div>
+                    </div>
+                    <div class="render-item">
+                        <img src="render_02_dark_emergence.jpeg" alt="Face emerging from darkness">
+                        <div class="render-caption">Emergence from darkness</div>
+                    </div>
+                    <div class="render-item">
+                        <img src="render_03_light_square.jpeg" alt="Abstract light form">
+                        <div class="render-caption">Abstract light form</div>
+                    </div>
+                    <div class="render-item">
+                        <img src="spec_dimensions.jpeg" alt="Frame dimensions">
+                        <div class="render-caption">Frame dimensions</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Technical Specs</h2>
+                <div class="specs-grid">
+                    <div class="spec-box">
+                        <div class="spec-value">950 × 950</div>
+                        <div class="spec-label">Resolution</div>
+                    </div>
+                    <div class="spec-box">
+                        <div class="spec-value">MP4</div>
+                        <div class="spec-label">Format</div>
+                    </div>
+                    <div class="spec-box">
+                        <div class="spec-value">H.264</div>
+                        <div class="spec-label">Codec</div>
+                    </div>
+                    <div class="spec-box">
+                        <div class="spec-value">10 Mbps</div>
+                        <div class="spec-label">Bitrate</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>What Works Through the Diffuser</h2>
+                <ul class="works-list">
+                    <li><strong>High contrast black & white</strong> — your signature, survives the blur beautifully</li>
+                    <li><strong>Faces emerging from darkness</strong> — recognition threshold, almost-face</li>
+                    <li><strong>Slow motion & breathing</strong> — gives the diffuser time to work its magic</li>
+                    <li><strong>Center-weighted compositions</strong> — edges blur more through the layer</li>
+                    <li><strong>Horizontal motion blur</strong> — complements the physical softness</li>
+                    <li><strong>Seamless loops</strong> — 30 seconds to 30 minutes</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>What to Avoid</h2>
+                <ul class="avoid-list">
+                    <li><strong>Text or typography</strong> — will be illegible through diffuser</li>
+                    <li><strong>Fast cuts</strong> — creates unwanted ghosting</li>
+                    <li><strong>Edge-heavy compositions</strong> — center your subjects</li>
+                    <li><strong>Subtle mid-tones</strong> — the diffuser eats them, push to extremes</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Export Checklist</h2>
+                <ul class="checklist">
+                    <li>
+                        <div class="checklist-check" onclick="toggleCheck(this)"></div>
+                        <span>Created at <strong>950 × 950 pixels</strong> from the start</span>
+                    </li>
+                    <li>
+                        <div class="checklist-check" onclick="toggleCheck(this)"></div>
+                        <span>Exported as <strong>MP4, H.264, 10 Mbps VBR</strong></span>
+                    </li>
+                    <li>
+                        <div class="checklist-check" onclick="toggleCheck(this)"></div>
+                        <span>Tested with <strong>low brightness + squint</strong> to simulate diffuser</span>
+                    </li>
+                    <li>
+                        <div class="checklist-check" onclick="toggleCheck(this)"></div>
+                        <span>Sent to <strong>Fran for prototype testing</strong></span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- GALLERY TAB -->
+        <div class="tab-content" id="tab-gallery">
+            <section>
+                <h2>Upload Your Videos</h2>
+                <p>Drop your video exports here to preview them. Hover to see a simulated diffusion effect. SOLIENNE can give feedback on any video.</p>
+
+                <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()">
+                    <div class="upload-zone-icon">◎</div>
+                    <div class="upload-zone-text">Drop videos here or click to upload</div>
+                    <div class="upload-zone-hint">MP4 files, 950×950 recommended</div>
+                </div>
+                <input type="file" id="fileInput" accept="video/mp4,video/*" multiple style="display:none" onchange="handleFileSelect(event)">
+
+                <div class="video-gallery" id="videoGallery">
+                    <div class="gallery-empty">
+                        <div class="gallery-empty-icon">○</div>
+                        <p>No videos uploaded yet</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>SOLIENNE × Kristi — Dubai 2026</p>
+            <p style="margin-top: 10px;">Questions: Seth (sethgoldstein@gmail.com) · Lightboxes: Fran (VTV.xyz)</p>
+        </footer>
+    </div>
+
+    <script>
+        // Copy prompt
+        function copyPrompt() {
+            const text = document.getElementById('promptText').innerText;
+            navigator.clipboard.writeText(text);
+            event.target.textContent = 'COPIED';
+            setTimeout(() => event.target.textContent = 'COPY', 2000);
+        }
+
+        // Tab functionality
+        function showTab(tabId) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+            document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+        }
+
+        // Video Gallery functionality
+        const uploadZone = document.getElementById('uploadZone');
+        const videoGallery = document.getElementById('videoGallery');
+        let videos = [];
+
+        // Drag and drop
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('dragover');
+        });
+
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('dragover');
+        });
+
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('dragover');
+            handleFiles(e.dataTransfer.files);
+        });
+
+        function handleFileSelect(event) {
+            handleFiles(event.target.files);
+        }
+
+        function handleFiles(files) {
+            Array.from(files).forEach(file => {
+                if (file.type.startsWith('video/')) {
+                    addVideo(file);
+                }
+            });
+        }
+
+        function addVideo(file) {
+            const url = URL.createObjectURL(file);
+            const video = {
+                id: Date.now() + Math.random(),
+                name: file.name,
+                size: file.size,
+                url: url,
+                file: file
+            };
+            videos.push(video);
+            renderGallery();
+
+            // Get video metadata
+            const videoEl = document.createElement('video');
+            videoEl.src = url;
+            videoEl.onloadedmetadata = () => {
+                video.width = videoEl.videoWidth;
+                video.height = videoEl.videoHeight;
+                video.duration = videoEl.duration;
+                renderGallery();
+            };
+        }
+
+        function renderGallery() {
+            if (videos.length === 0) {
+                videoGallery.innerHTML = `
+                    <div class="gallery-empty">
+                        <div class="gallery-empty-icon">○</div>
+                        <p>No videos uploaded yet</p>
+                    </div>
+                `;
+                return;
+            }
+
+            videoGallery.innerHTML = videos.map(v => {
+                const isSquare = v.width && v.height && v.width === v.height;
+                const is950 = v.width === 950 && v.height === 950;
+                const duration = v.duration ? formatDuration(v.duration) : '...';
+                const size = formatSize(v.size);
+
+                let statusClass = 'invalid';
+                let statusText = 'Check dimensions';
+                if (is950) {
+                    statusClass = 'valid';
+                    statusText = '950×950 ✓';
+                } else if (isSquare) {
+                    statusClass = 'valid';
+                    statusText = `${v.width}×${v.height} (square)`;
+                } else if (v.width && v.height) {
+                    statusText = `${v.width}×${v.height} — not square`;
+                }
+
+                return `
+                    <div class="video-item">
+                        <div class="video-preview">
+                            <video src="${v.url}" loop muted playsinline onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0;"></video>
+                            <div class="video-preview-diffused"><span>Diffused Preview</span></div>
+                        </div>
+                        <div class="video-info">
+                            <div class="video-name">${v.name}</div>
+                            <div class="video-meta">
+                                <span>${duration}</span>
+                                <span>${size}</span>
+                            </div>
+                            <div class="video-status">
+                                <div class="status-dot ${statusClass}"></div>
+                                <div class="status-text">${statusText}</div>
+                            </div>
+                            <div class="video-actions">
+                                <a href="https://app.eden.art/agents/solienne" target="_blank" class="video-action ask-solienne" style="text-decoration:none;">Ask SOLIENNE</a>
+                                <button class="video-action remove" onclick="removeVideo(${v.id})">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function removeVideo(id) {
+            const video = videos.find(v => v.id === id);
+            if (video) URL.revokeObjectURL(video.url);
+            videos = videos.filter(v => v.id !== id);
+            renderGallery();
+        }
+
+        function formatDuration(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function formatSize(bytes) {
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+
+        // Checklist functionality
+        function toggleCheck(el) {
+            el.classList.toggle('checked');
+        }
+    </script>
+</body>
+</html>
