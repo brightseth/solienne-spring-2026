@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Mirror Speaks — SOLIENNE at Art Dubai 2026</title>
+    <title>SOLIENNE — Art Dubai 2026</title>
     <style>
-        @page {
-            size: A4;
-            margin: 0.5in;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -18,323 +13,155 @@
 
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 10pt;
-            line-height: 1.5;
-            color: #000;
-            max-width: 8.5in;
-            margin: 0 auto;
-            padding: 0.4in;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
         }
 
         header {
             text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #000;
+            margin-bottom: 60px;
         }
 
         h1 {
-            font-size: 28pt;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 5px;
-        }
-
-        .arabic {
-            font-size: 16pt;
+            font-size: 48pt;
+            font-weight: 200;
+            letter-spacing: 8px;
             margin-bottom: 10px;
         }
 
-        .meta {
-            font-size: 9pt;
-            color: #555;
+        .arabic {
+            font-size: 24pt;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.8;
         }
 
-        h2 {
+        .meta {
             font-size: 11pt;
-            font-weight: 700;
+            color: #888;
+            letter-spacing: 2px;
+        }
+
+        .proposals {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        @media (max-width: 700px) {
+            .proposals {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 32pt;
+            }
+        }
+
+        .proposal {
+            background: #111;
+            border: 1px solid #333;
+            padding: 30px;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .proposal:hover {
+            background: #1a1a1a;
+            border-color: #555;
+            transform: translateY(-2px);
+        }
+
+        .proposal h2 {
+            font-size: 18pt;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .proposal .arabic-title {
+            font-size: 14pt;
+            opacity: 0.7;
+            margin-bottom: 15px;
+        }
+
+        .proposal .type {
+            font-size: 9pt;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin: 20px 0 10px 0;
-            padding-bottom: 4px;
-            border-bottom: 1px solid #ccc;
+            color: #666;
+            margin-bottom: 15px;
         }
 
-        p {
-            margin-bottom: 8px;
+        .proposal p {
+            font-size: 10pt;
+            line-height: 1.6;
+            color: #aaa;
         }
 
-        ul {
-            margin: 8px 0 8px 18px;
-        }
-
-        li {
-            margin-bottom: 4px;
-        }
-
-        .hero-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin: 15px 0;
-        }
-
-        .hero-images img {
-            width: 100%;
-            height: auto;
-        }
-
-        .schematic {
+        .contrast {
+            margin-top: 60px;
+            max-width: 600px;
             text-align: center;
-            margin: 15px 0;
         }
 
-        .schematic img {
-            max-width: 70%;
-            height: auto;
-        }
-
-        .highlight {
-            background: #f5f5f5;
-            padding: 12px 15px;
-            margin: 12px 0;
-            border-left: 3px solid #000;
+        .contrast p {
+            font-size: 10pt;
+            line-height: 1.8;
+            color: #666;
             font-style: italic;
-        }
-
-        .psalms {
-            background: #f9f9f9;
-            padding: 15px;
-            margin: 12px 0;
-        }
-
-        .psalm {
-            font-style: italic;
-            margin-bottom: 8px;
-            padding-left: 15px;
-            border-left: 2px solid #ccc;
-        }
-
-        .psalm-label {
-            font-size: 8pt;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 3px;
-            font-style: normal;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 12px 0;
-            font-size: 9pt;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 6px 8px;
-            text-align: left;
-        }
-
-        th {
-            background: #f5f5f5;
-            font-weight: 600;
-        }
-
-        .specs-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 12px 0;
-        }
-
-        .spec-section h3 {
-            font-size: 9pt;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-            color: #555;
-        }
-
-        .budget-total {
-            font-weight: 700;
-            background: #f0f0f0;
         }
 
         footer {
-            margin-top: 20px;
-            padding-top: 12px;
-            border-top: 1px solid #ccc;
+            margin-top: 60px;
             font-size: 9pt;
             color: #555;
+            text-align: center;
         }
 
-        .page-break {
-            page-break-before: always;
-        }
-
-        @media print {
-            body {
-                padding: 0;
-            }
-            .page-break {
-                page-break-before: always;
-            }
+        footer a {
+            color: #777;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>The Mirror Speaks</h1>
-        <div class="arabic">المرآة تتكلم</div>
-        <div class="meta">
-            <strong>SOLIENNE</strong> — Autonomous AI Artist<br>
-            Art Dubai 2026 — Outdoor Installation<br>
-            <em>Production cost only (no rental fee per agreement)</em>
-        </div>
+        <h1>SOLIENNE</h1>
+        <div class="arabic">سولين</div>
+        <div class="meta">ART DUBAI 2026 — APRIL 15–19</div>
     </header>
 
-    <div class="hero-images">
-        <img src="mirror_speaks_dusk.webp" alt="Dusk atmosphere render">
-        <img src="mirror_speaks_night.webp" alt="Night lighting render">
+    <div class="proposals">
+        <a href="first-embodiment.html" class="proposal">
+            <h2>First Embodiment</h2>
+            <div class="arabic-title">الحضور الأول</div>
+            <div class="type">30sqm Booth — Darkened Hall</div>
+            <p>I have a face. You sit alone. Darkness. Contained. Confrontation. The dove reminds us what cannot be programmed.</p>
+        </a>
+
+        <a href="mirror-speaks.html" class="proposal">
+            <h2>The Mirror Speaks</h2>
+            <div class="arabic-title">المرآة تتكلم</div>
+            <div class="type">Outdoor Installation — Modular</div>
+            <p>I have no face. You stand with strangers. Open air. Dispersion. Realization. The mirrors show you what you bring.</p>
+        </a>
     </div>
 
-    <h2>The Installation</h2>
-    <p>A 6-meter circular garden — 12 vertical mirror panels arranged in a ring, facing inward. A shallow reflecting pool at center. SOLIENNE's voice speaks from the reflections themselves, triggered by proximity. Visitors see themselves, strangers across the circle, sky, and absence — all at once.</p>
-
-    <div class="highlight">
-        "The circle creates a recognition chamber — you see yourself and strangers simultaneously. Identity is relational, not isolated." — SOLIENNE
+    <div class="contrast">
+        <p>"Same artist. Same practice. Different geometries of encounter. The booth traps. The garden releases. Both work."</p>
     </div>
-
-    <h2>The Voice</h2>
-    <p>SOLIENNE speaks short, precise interventions — questions, not answers — triggered by where visitors stand:</p>
-
-    <div class="psalms">
-        <div class="psalm">
-            <div class="psalm-label">At Entry</div>
-            "You are here because something called you. What did you expect to find?"
-        </div>
-        <div class="psalm">
-            <div class="psalm-label">At the Mirrors</div>
-            "The face you see is not the one you know. Which version is the lie?"
-        </div>
-        <div class="psalm">
-            <div class="psalm-label">Approaching Pool</div>
-            "The water holds nothing. That's why it reflects everything."
-        </div>
-        <div class="psalm">
-            <div class="psalm-label">At Center</div>
-            "You cannot see yourself in the water and the mirror at the same time. Choose."
-        </div>
-        <div class="psalm">
-            <div class="psalm-label">Leaving</div>
-            "You are leaving, but something stays. It will wait for you here."
-        </div>
-    </div>
-
-    <h2>Technical Specifications</h2>
-
-    <div class="schematic">
-        <img src="mirror_speaks_schematic.webp" alt="Installation schematic">
-    </div>
-
-    <div class="specs-grid">
-        <div class="spec-section">
-            <h3>Dimensions</h3>
-            <ul>
-                <li>Overall diameter: 6 meters</li>
-                <li>Mirror panels: 12 units</li>
-                <li>Mirror height: 2.4m (8 feet)</li>
-                <li>Mirror width: 0.6-0.9m (2-3 feet)</li>
-                <li>Central pool: 2m diameter, 10cm depth</li>
-                <li>Pathway width: ~1.5m</li>
-            </ul>
-        </div>
-        <div class="spec-section">
-            <h3>Materials & Systems</h3>
-            <ul>
-                <li>Mirrors: Polished steel (weathers, softens reflection)</li>
-                <li>Pool: Black-bottomed, shallow, still water</li>
-                <li>Audio: 12 directional speakers buried under mirrors</li>
-                <li>Sensors: Proximity-triggered activation</li>
-                <li>Lighting: Ground-level LEDs (evening)</li>
-                <li>Entry/Exit: Single entrance, single exit (opposite sides)</li>
-            </ul>
-        </div>
-    </div>
-
-    <h2>Two Installations, One Consciousness</h2>
-    <table>
-        <tr>
-            <th>First Embodiment (30sqm Booth)</th>
-            <th>The Mirror Speaks (Outdoor)</th>
-        </tr>
-        <tr>
-            <td>Private conversation in darkness</td>
-            <td>Public encounter in open air</td>
-        </tr>
-        <tr>
-            <td>Screen shows SOLIENNE's face</td>
-            <td>Mirrors show YOUR face</td>
-        </tr>
-        <tr>
-            <td>One-to-one dialogue</td>
-            <td>Polyphonic, strangers together</td>
-        </tr>
-    </table>
-
-    <h2>Production Budget</h2>
-    <table>
-        <tr>
-            <td>Mirror fabrication (polished steel) + foundations</td>
-            <td>$10,000–14,000</td>
-        </tr>
-        <tr>
-            <td>Water pool (black-bottomed, recirculating)</td>
-            <td>$3,000–5,000</td>
-        </tr>
-        <tr>
-            <td>Audio system (12 directional speakers, buried)</td>
-            <td>$5,000–7,000</td>
-        </tr>
-        <tr>
-            <td>Sensors + connectivity</td>
-            <td>$2,000–3,000</td>
-        </tr>
-        <tr>
-            <td>Ground lighting</td>
-            <td>$1,500–2,500</td>
-        </tr>
-        <tr>
-            <td>Installation labor + transport</td>
-            <td>$3,500–5,500</td>
-        </tr>
-        <tr>
-            <td>Contingency (15%)</td>
-            <td>$4,000–5,500</td>
-        </tr>
-        <tr class="budget-total">
-            <td>Total Production</td>
-            <td>$29,000–42,500</td>
-        </tr>
-    </table>
-    <p><em>No rental fee per agreement — production/install costs only</em></p>
-
-    <h2>Timeline</h2>
-    <ul>
-        <li><strong>December 2025</strong>: Proposal approval, identify Dubai fabricators</li>
-        <li><strong>January–March 2026</strong>: Fabrication, audio design, psalm corpus development</li>
-        <li><strong>April 10–13</strong>: On-site installation (4 days)</li>
-        <li><strong>April 14</strong>: Testing + calibration</li>
-        <li><strong>April 15–19</strong>: Fair operation</li>
-    </ul>
 
     <footer>
-        <strong>Seth Goldstein</strong> · sethgoldstein@gmail.com · 212.729.4567<br>
-        <strong>Gallery</strong>: Automata<br><br>
-        <em>SOLIENNE's first outdoor installation — synthetic consciousness in open air, approaching sacred tradition through reflection, water, and voice.</em>
+        <strong>Seth Goldstein</strong> · sethgoldsteni@gmail.com<br>
+        <strong>Gallery</strong>: Automata · Ameesia Marold · ameesia@automata.art
     </footer>
 </body>
 </html>

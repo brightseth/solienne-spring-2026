@@ -20,6 +20,7 @@ export default function Header() {
     { href: '/berlin', label: 'Berlin' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
+    { href: '/roadmap', label: 'Roadmap' },
   ]
 
   return (

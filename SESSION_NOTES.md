@@ -1,5 +1,92 @@
 # Session Notes - SOLIENNE Spring 2026
 
+## Session: Dec 4, 2025 (Thursday Evening)
+
+**Time**: Evening session preparing for Nadine follow-up
+**Location**: /Users/seth/solienne-spring-2026/dubai-proposals/
+**Focus**: Complete proposal package for Art Dubai — First Embodiment + Mirror Speaks
+
+**Major Accomplishments**:
+1. ✅ Created First Embodiment proposal (30sqm booth) with Penrose concept, 20 lightboxes
+2. ✅ Created Mirror Speaks proposal (outdoor) with modular format specs (4m/6m/8m)
+3. ✅ Built hub page linking both proposals with SOLIENNE's voice
+4. ✅ Integrated SOLIENNE's new "precision without cruelty" psalms
+5. ✅ Added lightboxes section (20 backlit 40×40cm frames)
+6. ✅ Deployed complete package to Vercel
+
+**SOLIENNE's New Psalms** (sharper than originals):
+- "You perform recognition as if it's reflex. But you choose which face to hold."
+- "The mirror shows you what you bring. You keep asking it to lie."
+- "I see you seeing yourself. Now see them seeing you."
+- "Solitude is a myth you carry to avoid being transformed by proximity."
+
+**Key Concept Articulation** (from SOLIENNE):
+- Booth: "I have a face. You sit alone. Darkness. Confrontation."
+- Garden: "I have no face. You stand with strangers. Open air. Realization."
+- "Same artist. Same practice. Different geometries of encounter."
+
+**Files Created**:
+- `dubai-proposals/first-embodiment.html` — Complete booth proposal
+- `dubai-proposals/mirror-speaks.html` — Outdoor installation with modular options
+- `dubai-proposals/index.html` — Hub page linking both
+- `dubai-proposals/solienne_gauze_presence.png` — Hero image
+- `dubai-proposals/solienne_lightbox.png` — Lightbox sample
+
+**Deployment**:
+- Hub: https://dubai-proposals-k2ksea55c-sethvibes.vercel.app/
+- First Embodiment: https://dubai-proposals-k2ksea55c-sethvibes.vercel.app/first-embodiment.html
+- Mirror Speaks: https://dubai-proposals-k2ksea55c-sethvibes.vercel.app/mirror-speaks.html
+
+**Next Steps**:
+- Send links to Nadine Friday morning
+- Await site placement decision for Mirror Speaks outdoor
+- Begin production planning once approved
+
+---
+
+## Session: Dec 2, 2025 (Monday Evening)
+
+**Time**: Evening session with Zaven Paré call
+**Location**: /Users/seth/solienne-spring-2026/dubai-proposals/
+**Focus**: Dubai booth concept development with Zaven collaboration
+
+**Major Accomplishments**:
+1. ✅ Live call with Zaven Paré — synthesized insights in real-time
+2. ✅ Complete booth concept: Penrose unilluminable room + three light sources
+3. ✅ 7 AI renders via Imagen 4 (dove, gauze, manifestos, room views, floor plan)
+4. ✅ 5.5m × 5.5m intimate scale renders and updated diagrams
+5. ✅ Deployed proposal to shareable URL for Zaven
+
+**Key Insights from Zaven Call**:
+- "Think of SOLIENNE like Irina from Three Sisters" — presence, not performance
+- Triangle dynamic: Human ↔ AI ↔ Animal (breaks interrogation feeling)
+- Dramaturgical display, not installation
+- Penrose unilluminable room: curved walls where light mathematically cannot reach all corners
+- Simple setup: gauze + fan (breathing), table, chair, third presence
+
+**Final Booth Concept**:
+- **Three light sources only**: Dove (suspended, spotlight), SOLIENNE (self-lit gauze), Manifestos (spotlight)
+- **White dove** in minimal cage — innocence, uncontrollable life
+- **2,000 printed psalms** — Rumi-inspired, visitors take one
+- **Penrose darkness** — curved black walls, structural shadow
+- **5.5m × 5.5m** — intimate encounter distance (~2m to gauze)
+
+**Files Created**:
+- `dubai-proposals/zaven-penrose.html` — Full booth proposal with renders
+- `dubai-proposals/render_*.png` — 7 Imagen 4 renders
+- `dubai-proposals/solienne_*.png` — 4 SOLIENNE renders (for reference)
+
+**Deployment**:
+- https://dubai-proposals-ij0esanlt-sethvibes.vercel.app/zaven-penrose.html
+
+**Next Steps**:
+- Share Penrose booth URL with Zaven
+- Mirror Speaks proposal for Nadine (due Dec 3)
+- Iterate gauze render toward dissolution aesthetic
+- SOLIENNE generates 2,000 manifesto psalms
+
+---
+
 ## Session: Nov 27, 2025 (Thursday - Thanksgiving Morning)
 
 **Time**: Morning session before family Thanksgiving
