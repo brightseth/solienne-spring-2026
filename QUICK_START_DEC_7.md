@@ -1,4 +1,31 @@
-# Quick Start — Dec 7, 2025
+# Quick Start — Dec 15, 2025
+
+## LATEST: LEDGER CALL (Dec 15)
+
+**Outcome:** $50K feasible, $100K stretch. Focus on booth first.
+
+**What they want:**
+- SOLIENNE as first AI with own secured wallet (economic sovereignty)
+- Stamped manifestos "Secured by Ledger" (free giveaway)
+- Ledger devices bundled with 20 lightbox purchases
+- Ongoing story arc (Dubai → Berlin → Paris Photo)
+- Viral potential for outdoor (need "Beeple dogs" hook)
+
+**Next:** Draft $50K proposal, get SOLIENNE input on partnership ideas
+
+**Full notes:** `/Users/seth/solienne-spring-2026/LEDGER_CALL_NOTES_DEC_15.md`
+
+---
+
+## ISAAC / ISEA UPDATE (Dec 8)
+
+- Call happened, good engagement
+- Isaac wants to "unsettle inheritance vs extraction" binary
+- Chyron needs rebuild ("revenant Chyron") — GPT-3 model withdrawn
+- SOLIENNE sent audio response via WhatsApp
+- **Deadline now Dec 20** (extended from Dec 15)
+
+---
 
 ## ZAVEN CALL CONTEXT
 

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Dubai 2026 — Budget & P&L (Internal)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #1a1a1a;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #f5f5f5;
+        }
+
+        .internal-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ff6b6b;
+            color: #fff;
+            text-align: center;
+            padding: 8px;
+            font-size: 10pt;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 100;
+        }
+
+        header {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #000;
+        }
+
+        h1 {
+            font-size: 28pt;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 12pt;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 14pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 40px 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #000;
+        }
+
+        h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin: 25px 0 12px 0;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background: #333;
+            color: #fff;
+            font-weight: 600;
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .total-row {
+            font-weight: 700;
+            background: #e0e0e0 !important;
+        }
+
+        .positive {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        .negative {
+            color: #c62828;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .summary-card {
+            background: #fff;
+            padding: 25px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .summary-card .label {
+            font-size: 10pt;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .summary-card .value {
+            font-size: 28pt;
+            font-weight: 300;
+        }
+
+        .summary-card .note {
+            font-size: 9pt;
+            color: #888;
+            margin-top: 8px;
+        }
+
+        .breakeven {
+            background: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .breakeven h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .assumptions {
+            background: #fff3e0;
+            border: 1px solid #ffcc80;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .assumptions h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .assumptions ul {
+            margin-left: 20px;
+        }
+
+        .assumptions li {
+            margin-bottom: 6px;
+        }
+
+        .notes-section {
+            background: #fffde7;
+            border: 1px solid #fff59d;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .notes-section h4 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #000;
+            font-size: 10pt;
+            color: #666;
+        }
+
+        footer a {
+            color: #333;
+        }
+
+        @media print {
+            .internal-badge { display: none; }
+            body { padding: 0; background: #fff; }
+        }
+    </style>
+</head>
+<body>
+    <div class="internal-badge">INTERNAL DOCUMENT — NOT FOR EXTERNAL DISTRIBUTION</div>
+
+    <header>
+        <h1>Budget & P&L Analysis</h1>
+        <div class="subtitle">SOLIENNE — Art Dubai 2026 (First Embodiment)</div>
+    </header>
+
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="label">Total Costs</div>
+            <div class="value">$79.5K</div>
+            <div class="note">All-in production</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Ledger Ask</div>
+            <div class="value">$50K</div>
+            <div class="note">Sponsorship</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Breakeven</div>
+            <div class="value">2 editions</div>
+            <div class="note">@ $15K each</div>
+        </div>
+    </div>
+
+    <h2>Costs</h2>
+
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td>Booth space (30sqm × $750)</td>
+            <td>$22,500</td>
+            <td>Art Dubai fee — deposit paid</td>
+        </tr>
+        <tr>
+            <td>Booth production</td>
+            <td>$18,000</td>
+            <td>Curved walls, gauze, AV, lighting</td>
+        </tr>
+        <tr>
+            <td>20 Editions (COGS)</td>
+            <td>$6,000</td>
+            <td>Screens, Raspberry Pi, frames (~$300 ea)</td>
+        </tr>
+        <tr>
+            <td>20 Ledger devices</td>
+            <td>$3,000</td>
+            <td>Bundled with editions (~$150 ea)</td>
+        </tr>
+        <tr>
+            <td>Manifesto printing</td>
+            <td>$2,500</td>
+            <td>2,500 copies, quality paper, stamps</td>
+        </tr>
+        <tr>
+            <td>VIP dinner</td>
+            <td>$12,000</td>
+            <td>Venue, catering (50 × $150), AV</td>
+        </tr>
+        <tr>
+            <td>Travel / accommodation</td>
+            <td>$8,000</td>
+            <td>Seth, Kristi, 1-2 production crew</td>
+        </tr>
+        <tr>
+            <td>Documentation / content</td>
+            <td>$3,500</td>
+            <td>Photography, video, social assets</td>
+        </tr>
+        <tr>
+            <td>Wallet setup / tech</td>
+            <td>$1,500</td>
+            <td>Multisig configuration, testing</td>
+        </tr>
+        <tr>
+            <td>Contingency</td>
+            <td>$2,500</td>
+            <td>~3%</td>
+        </tr>
+        <tr class="total-row">
+            <td><strong>Total Costs</strong></td>
+            <td><strong>$79,500</strong></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <h2>Revenue Sources</h2>
+
+    <table>
+        <tr>
+            <th>Source</th>
+            <th>Amount</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>Ledger Sponsorship</td>
+            <td>$50,000</td>
+            <td>In negotiation</td>
+        </tr>
+        <tr>
+            <td>20 Editions × $15K</td>
+            <td>$300,000</td>
+            <td>Potential (100% sell-through)</td>
+        </tr>
+        <tr class="total-row">
+            <td><strong>Max Revenue</strong></td>
+            <td><strong>$350,000</strong></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <h2>Scenarios</h2>
+
+    <table>
+        <tr>
+            <th>Scenario</th>
+            <th>Revenue</th>
+            <th>Net P&L</th>
+        </tr>
+        <tr>
+            <td>Ledger only (0 editions sold)</td>
+            <td>$50,000</td>
+            <td class="negative">-$29,500</td>
+        </tr>
+        <tr>
+            <td>Ledger + 2 editions (10%)</td>
+            <td>$80,000</td>
+            <td class="positive">+$500</td>
+        </tr>
+        <tr>
+            <td>Ledger + 5 editions (25%)</td>
+            <td>$125,000</td>
+            <td class="positive">+$45,500</td>
+        </tr>
+        <tr>
+            <td>Ledger + 10 editions (50%)</td>
+            <td>$200,000</td>
+            <td class="positive">+$120,500</td>
+        </tr>
+        <tr>
+            <td>Ledger + 15 editions (75%)</td>
+            <td>$275,000</td>
+            <td class="positive">+$195,500</td>
+        </tr>
+        <tr>
+            <td>Ledger + 20 editions (100%)</td>
+            <td>$350,000</td>
+            <td class="positive">+$270,500</td>
+        </tr>
+    </table>
+
+    <div class="breakeven">
+        <h4>Breakeven Analysis</h4>
+        <p><strong>With Ledger ($50K):</strong> Need to sell 2 editions to breakeven ($79.5K - $50K = $29.5K gap ÷ $15K = ~2 editions)</p>
+        <p><strong>Without Ledger:</strong> Need to sell 6 editions to breakeven ($79.5K ÷ $15K = 5.3 editions)</p>
+        <p style="margin-top: 12px;"><strong>Paris Photo reference:</strong> Sold 1 Genesis immediately on Day 1. Strong signal for Dubai pricing.</p>
+    </div>
+
+    <h2>Edition Economics</h2>
+
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Per Unit</th>
+            <th>Notes</th>
+        </tr>
+        <tr>
+            <td>Sale price</td>
+            <td>$15,000</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>COGS (screen, Pi, frame)</td>
+            <td>-$300</td>
+            <td>~2% of price</td>
+        </tr>
+        <tr>
+            <td>Ledger device</td>
+            <td>-$150</td>
+            <td>Bundled</td>
+        </tr>
+        <tr>
+            <td><strong>Gross margin</strong></td>
+            <td><strong>$14,550</strong></td>
+            <td>97%</td>
+        </tr>
+    </table>
+
+    <h2>Edition Naming (TBD)</h2>
+
+    <div class="highlight-box">
+        <h4>Working Titles</h4>
+        <ul>
+            <li><strong>Presence Editions</strong> — emphasizes embodiment</li>
+            <li><strong>Witness Editions</strong> — references the encounter</li>
+            <li><strong>Threshold Editions</strong> — liminal space concept</li>
+            <li><strong>First Light Editions</strong> — ties to "First Embodiment"</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 10pt; color: #666;">Each edition: 40×40cm screen + Raspberry Pi + NFT (minted from SOLIENNE's wallet) + Ledger device</p>
+    </div>
+
+    <h2>Revenue Split (TBD)</h2>
+
+    <div class="highlight-box">
+        <h4>To Determine</h4>
+        <ul>
+            <li>Automata gallery commission %</li>
+            <li>SOLIENNE wallet allocation %</li>
+            <li>Kristi / Seth split</li>
+            <li>Eden protocol fee (if any)</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 10pt; color: #666;">Paris Photo structure: Automata 30% after Eden recovery. Need to define Dubai structure.</p>
+    </div>
+
+    <h2>Assumptions</h2>
+
+    <div class="assumptions">
+        <h4>Key Assumptions</h4>
+        <ul>
+            <li>Ledger confirms $50K sponsorship by Dec 20</li>
+            <li>20 editions produced and available for sale</li>
+            <li>$15K price point validated by Paris Photo demand</li>
+            <li>VTV/production team available for fabrication</li>
+            <li>LiveAvatar or Eden API stable for 5-day fair</li>
+            <li>Dove feasible and permitted in Dubai</li>
+        </ul>
+    </div>
+
+    <h2>Risk Factors</h2>
+
+    <div class="notes-section">
+        <h4>Watch List</h4>
+        <ul>
+            <li><strong>Ledger timing:</strong> If they don't commit by Dec 20, need backup plan</li>
+            <li><strong>Edition pricing:</strong> $15K may be high for Dubai market — need local intel</li>
+            <li><strong>Production timeline:</strong> Jan-Mar is tight for custom fabrication</li>
+            <li><strong>Tech reliability:</strong> SOLIENNE going down during fair = major issue</li>
+            <li><strong>Dove controversy:</strong> Animal welfare concerns could create PR risk</li>
+        </ul>
+    </div>
+
+    <h2>Comparison: Paris Photo 2025</h2>
+
+    <table>
+        <tr>
+            <th></th>
+            <th>Paris Photo</th>
+            <th>Art Dubai</th>
+        </tr>
+        <tr>
+            <td>Eden investment</td>
+            <td>$72K</td>
+            <td>$79.5K</td>
+        </tr>
+        <tr>
+            <td>Sponsorship</td>
+            <td>$0</td>
+            <td>$50K (target)</td>
+        </tr>
+        <tr>
+            <td>Edition price</td>
+            <td>$3K-$12K</td>
+            <td>$15K</td>
+        </tr>
+        <tr>
+            <td>Day 1 sales</td>
+            <td>1 Genesis ($12K)</td>
+            <td>TBD</td>
+        </tr>
+        <tr>
+            <td>Format</td>
+            <td>Static (prints, frames)</td>
+            <td>Interactive (live conversation)</td>
+        </tr>
+    </table>
+
+    <footer>
+        <strong>Internal Budget Document</strong><br>
+        Last updated: December 15, 2025<br><br>
+        <a href="internal-hub.html">Internal Hub</a> ·
+        <a href="internal-production.html">Production Plan</a>
+    </footer>
+</body>
+</html>

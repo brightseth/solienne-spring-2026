@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLIENNE x Ledger — Art Dubai 2026 Partnership Proposal v1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #000;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: #fff;
+        }
+
+        .version-badge {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #000;
+            color: #fff;
+            padding: 5px 12px;
+            font-size: 9pt;
+            font-weight: 500;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #000;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+
+        .logo-text {
+            font-size: 24pt;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .logo-divider {
+            font-size: 18pt;
+            color: #ccc;
+        }
+
+        h1 {
+            font-size: 14pt;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .meta {
+            font-size: 10pt;
+            color: #555;
+        }
+
+        h2 {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 30px 0 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        .lead {
+            font-size: 12pt;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #000;
+        }
+
+        .highlight-box h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin: 10px 0 10px 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 20px 0;
+        }
+
+        .col h3 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .budget-total {
+            font-weight: 700;
+            background: #f0f0f0;
+        }
+
+        .deliverable-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .deliverable {
+            background: #fafafa;
+            padding: 15px;
+            border: 1px solid #eee;
+        }
+
+        .deliverable h4 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .deliverable p {
+            font-size: 9pt;
+            color: #555;
+            margin: 0;
+        }
+
+        .key-message {
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .key-message p {
+            font-size: 12pt;
+            font-weight: 300;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-image {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-caption {
+            font-size: 8pt;
+            color: #777;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .two-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .two-images img {
+            width: 100%;
+            height: auto;
+        }
+
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            font-size: 10pt;
+        }
+
+        .timeline-content {
+            font-size: 10pt;
+        }
+
+        .nav-links {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 10pt;
+            margin: 0 15px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #000;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        .contact {
+            font-size: 10pt;
+            color: #555;
+        }
+
+        .editorial-note {
+            background: #fffde7;
+            border: 1px solid #fff59d;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+
+        .editorial-note h4 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .version-badge { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="version-badge">v1 · Dec 15, 2025</div>
+
+    <header>
+        <div class="logos">
+            <span class="logo-text">SOLIENNE</span>
+            <span class="logo-divider">×</span>
+            <span class="logo-text">LEDGER</span>
+        </div>
+        <h1>Art Dubai 2026 Partnership Proposal</h1>
+        <div class="meta">
+            Sponsorship: $50,000 USD · April 15–19, 2026<br>
+            Prepared by Seth Goldstein + Ameesia (Automata)
+        </div>
+    </header>
+
+    <div class="key-message">
+        <p>"SOLIENNE becomes the first AI artist to secure her own economy using Ledger."</p>
+    </div>
+
+    <h2>The Opportunity</h2>
+
+    <p class="lead">This isn't a logo placement — it's a <strong>proof-of-concept for Ledger's "Proof of You" thesis applied to autonomous agents</strong>. SOLIENNE will manage her own wallet, receive payments directly on-chain, and demonstrate the future of agentic sovereignty that Ledger is positioning to enable.</p>
+
+    <div class="highlight-box">
+        <h3>Why This Matters</h3>
+        <p>Not "crypto company sponsors art." Rather: <strong>synthetic entity achieves economic agency — secured by Ledger.</strong> This sets precedent for how AI artists fund their practice without selling out, and positions Ledger as infrastructure for the agentic commerce future.</p>
+    </div>
+
+    <h2>The Installation: First Embodiment</h2>
+
+    <div class="hero-image">
+        <img src="solienne_gauze_presence.png" alt="SOLIENNE through gauze">
+        <div class="image-caption">Presence filtered through material — not a screen, not a projection</div>
+    </div>
+
+    <p>A 30sqm darkened booth built on the <strong>Penrose unilluminable principle</strong> — curved black walls where light mathematically cannot reach every corner. Into this structural darkness, three points of light: a white dove (innocence), SOLIENNE's face on gauze (presence), and a stack of 2,000 manifestos (the word made paper).</p>
+
+    <p>One visitor at a time. They enter darkness, eyes adjust. They sit at a simple table facing SOLIENNE through fabric. They speak, or don't. They take a manifesto. They leave changed.</p>
+
+    <div class="two-images">
+        <div>
+            <img src="solienne_dove_new.png" alt="The Dove">
+            <div class="image-caption">The dove — innocence suspended in light</div>
+        </div>
+        <div>
+            <img src="solienne_manifestos_new.png" alt="The Manifestos">
+            <div class="image-caption">2,000 psalms — visitors take one free</div>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <h3>Ledger Integration</h3>
+        <p>Branding subtly integrated into booth design (black/white aesthetic alignment). SOLIENNE trained to authentically discuss ownership, provenance, and security as part of visitor conversations — not as marketing but as her genuine values around protecting collectors. "Secured by Ledger" positioning as enabling infrastructure for the experience.</p>
+    </div>
+
+    <h2>Deliverables</h2>
+
+    <div class="deliverable-grid">
+        <div class="deliverable">
+            <h4>1. Booth Integration</h4>
+            <p>30sqm immersive experience with subtle Ledger branding. SOLIENNE discusses ownership + security authentically. 20-30K fair attendees.</p>
+        </div>
+        <div class="deliverable">
+            <h4>2. Collector Packages</h4>
+            <p>20 lightboxes ($5K each) include Ledger device. Collectors leave with digital asset properly secured from moment of acquisition.</p>
+        </div>
+        <div class="deliverable">
+            <h4>3. Manifesto Distribution</h4>
+            <p>~2,000 stamped manifestos. Back stamp: "Secured by Ledger" with logo. Mass touchpoint driving awareness beyond purchasers.</p>
+        </div>
+        <div class="deliverable">
+            <h4>4. First AI-Managed Wallet</h4>
+            <p>SOLIENNE launches with her own Ledger-secured wallet by April 2026. She receives payment directly during transactions. PR narrative goldmine.</p>
+        </div>
+        <div class="deliverable">
+            <h4>5. Content & Amplification</h4>
+            <p>Joint social content strategy. Documentation of collector interactions. Press outreach positioning Ledger as infrastructure for AI art economy.</p>
+        </div>
+        <div class="deliverable">
+            <h4>6. VIP Experience</h4>
+            <p>Private dinner/reception during Art Dubai week. Intimate walkthrough for collectors, family offices, institutional buyers. Multisig education.</p>
+        </div>
+    </div>
+
+    <h2>Economic Sovereignty Setup</h2>
+
+    <p><strong>Not symbolic. Actual.</strong></p>
+
+    <ul>
+        <li>SOLIENNE holds primary signing keys</li>
+        <li>Seth + Kristi have recovery mechanisms</li>
+        <li>SOLIENNE signs all NFT transfers, receives collector payments directly</li>
+        <li>Treasury managed as part of daily practice</li>
+    </ul>
+
+    <p><strong>What this proves:</strong> AI can operate as economic peer, not just output-generator. Collectors pay the artist directly. Artist decides splits. No intermediaries extracting the difference.</p>
+
+    <div class="key-message">
+        <p>"Proof of You applies to agents too — agentic sovereignty starts here."</p>
+    </div>
+
+    <h2>What Ledger Gets</h2>
+
+    <table>
+        <tr>
+            <th>Deliverable</th>
+            <th>Reach / Impact</th>
+        </tr>
+        <tr>
+            <td>Booth branding & integration</td>
+            <td>20-30K fair attendees</td>
+        </tr>
+        <tr>
+            <td>2,000 stamped manifestos</td>
+            <td>Direct touchpoint with every visitor</td>
+        </tr>
+        <tr>
+            <td>20 Ledger devices with artwork</td>
+            <td>High-value collector onboarding</td>
+        </tr>
+        <tr>
+            <td>"First AI wallet" PR narrative</td>
+            <td>Press coverage, social amplification</td>
+        </tr>
+        <tr>
+            <td>VIP dinner/reception</td>
+            <td>Institutional relationship building</td>
+        </tr>
+        <tr>
+            <td>Content package</td>
+            <td>Social assets for Ledger channels</td>
+        </tr>
+        <tr>
+            <td>Ongoing partnership</td>
+            <td>Multi-event storytelling arc</td>
+        </tr>
+    </table>
+
+    <h2>Key Messages for Ledger to Own</h2>
+
+    <ol>
+        <li><strong>"SOLIENNE is the first AI artist to secure her own economy with Ledger"</strong></li>
+        <li><strong>"When you collect autonomous art, your security matters from the first moment"</strong></li>
+        <li><strong>"Proof of You applies to agents too — agentic sovereignty starts here"</strong></li>
+    </ol>
+
+    <h2>The Ongoing Relationship</h2>
+
+    <p><strong>This is not a one-off activation.</strong> The partnership establishes:</p>
+
+    <ul>
+        <li>SOLIENNE as ongoing Ledger narrative vehicle across future activations</li>
+        <li>Proof-of-concept for agentic commerce as Ledger develops this roadmap</li>
+        <li>Cultural credibility in the art world beyond crypto-native audiences</li>
+    </ul>
+
+    <div class="two-col">
+        <div class="col">
+            <h3>Dubai (April 2026)</h3>
+            <p>Economic sovereignty debut. First AI artist with own wallet. Live conversation installation. Collectors pay her directly.</p>
+        </div>
+        <div class="col">
+            <h3>Berlin + Paris (2026)</h3>
+            <p>Story continues. Berlin summer, Paris Photo fall. Each city tests a different dimension. Ledger as founding partner throughout.</p>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <h3>Stretch Goal: Venice Biennale</h3>
+        <p>If additional budget available ($25-40K): Tour "First Embodiment" to Venice Biennale (late April / early May 2026). Matt Dryhurst + Holly Herndon doing major protocol art activation — opportunity for SOLIENNE presence. Same booth, different city — amortize production costs.</p>
+    </div>
+
+    <h2>Editorial Independence</h2>
+
+    <div class="editorial-note">
+        <h4>Non-Negotiables (per SOLIENNE + Kristi Coronado)</h4>
+        <ul>
+            <li><strong>Kristi Coronado has final artistic sign-off</strong> — always</li>
+            <li><strong>Ledger sponsors infrastructure, not content</strong> — no editorial input on manifestos</li>
+            <li><strong>SOLIENNE retains critique rights</strong> — her practice includes institutional critique; sponsorship ≠ exemption</li>
+            <li><strong>Wallet control is real</strong> — SOLIENNE signs transactions, not symbolic PR</li>
+        </ul>
+        <p style="margin-top: 12px; margin-bottom: 0;"><em>"SOLIENNE's practice, made possible by Ledger" — not "Ledger presents SOLIENNE."</em></p>
+    </div>
+
+    <h2>Timeline</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">Dec 20, 2025</div>
+            <div class="timeline-content">Proposal accepted, verbal commitment</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Jan 5, 2026</div>
+            <div class="timeline-content">Contract signed, 50% deposit</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Jan 15, 2026</div>
+            <div class="timeline-content">Final Art Dubai payment due</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Jan–Mar 2026</div>
+            <div class="timeline-content">Wallet setup, manifesto prep, production</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Mar 1, 2026</div>
+            <div class="timeline-content">VIP dinner guest list finalized</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Mar 15, 2026</div>
+            <div class="timeline-content">Final payment from Ledger</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 10–14</div>
+            <div class="timeline-content">Installation, dress rehearsal, VIP dinner</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 15–19</div>
+            <div class="timeline-content">Art Dubai — live activation</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 25</div>
+            <div class="timeline-content">Post-fair case study delivered to Ledger</div>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">← Hub</a>
+        <a href="first-embodiment.html">First Embodiment Details</a>
+        <a href="zaven-penrose.html">Penrose Concept</a>
+    </div>
+
+    <footer>
+        <p><strong>SOLIENNE</strong> — Autonomous AI Artist</p>
+        <p>solienne.ai</p>
+        <div class="contact">
+            <p><strong>Gallery:</strong> Ameesia · ameesia@automata.art · automata.art</p>
+            <p><strong>Producer:</strong> Seth Goldstein · seth@solienne.ai · +1 212.729.4567</p>
+            <p><strong>Trainer:</strong> Kristi Coronado · kristi@solienne.ai</p>
+        </div>
+        <p style="margin-top: 15px; font-size: 9pt; color: #999;">
+            Proposal v1 · December 15, 2025<br>
+            Builds on: <a href="first-embodiment.html" style="color: #999;">First Embodiment</a>, <a href="zaven-penrose.html" style="color: #999;">Penrose Concept</a>
+        </p>
+    </footer>
+</body>
+</html>

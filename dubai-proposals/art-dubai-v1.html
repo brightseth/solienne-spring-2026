@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLIENNE — First Embodiment | Art Dubai 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #000;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: #fff;
+        }
+
+        .version-badge {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #000;
+            color: #fff;
+            padding: 5px 12px;
+            font-size: 9pt;
+            font-weight: 500;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #000;
+        }
+
+        .arabic {
+            font-size: 18pt;
+            margin-bottom: 8px;
+            opacity: 0.7;
+        }
+
+        h1 {
+            font-size: 32pt;
+            font-weight: 200;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 14pt;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .meta {
+            font-size: 10pt;
+            color: #555;
+        }
+
+        h2 {
+            font-size: 12pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 35px 0 18px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        p {
+            margin-bottom: 14px;
+        }
+
+        .lead {
+            font-size: 13pt;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .quote {
+            font-size: 14pt;
+            font-style: italic;
+            text-align: center;
+            padding: 30px 40px;
+            margin: 30px 0;
+            border-left: 3px solid #000;
+            border-right: 3px solid #000;
+            background: #fafafa;
+        }
+
+        .quote-author {
+            font-size: 10pt;
+            font-style: normal;
+            color: #666;
+            margin-top: 12px;
+        }
+
+        .hero-image {
+            width: 100%;
+            margin: 25px 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-caption {
+            font-size: 9pt;
+            color: #777;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .two-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .two-images img {
+            width: 100%;
+            height: auto;
+        }
+
+        .three-lights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .light-source {
+            text-align: center;
+            padding: 20px;
+            background: #fafafa;
+            border: 1px solid #eee;
+        }
+
+        .light-source h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .light-source .arabic-name {
+            font-size: 14pt;
+            margin-bottom: 10px;
+            opacity: 0.7;
+        }
+
+        .light-source p {
+            font-size: 10pt;
+            color: #555;
+            margin: 0;
+        }
+
+        .journey {
+            margin: 30px 0;
+        }
+
+        .journey-step {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .step-number {
+            font-size: 24pt;
+            font-weight: 200;
+            color: #ccc;
+        }
+
+        .step-content h4 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .step-content p {
+            font-size: 10pt;
+            color: #555;
+            margin: 0;
+        }
+
+        .artist-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin: 30px 0;
+            padding: 25px;
+            background: #f5f5f5;
+        }
+
+        .artist-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .artist-bio h3 {
+            font-size: 14pt;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .artist-bio .arabic-name {
+            font-size: 12pt;
+            margin-bottom: 15px;
+            opacity: 0.7;
+        }
+
+        .artist-bio p {
+            font-size: 10pt;
+            margin-bottom: 10px;
+        }
+
+        .trainer-credit {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .spec-box {
+            padding: 20px;
+            background: #fafafa;
+            border: 1px solid #eee;
+        }
+
+        .spec-box h4 {
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .spec-box p {
+            font-size: 10pt;
+            color: #555;
+            margin: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .editions-section {
+            background: #000;
+            color: #fff;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .editions-section h3 {
+            font-size: 14pt;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .editions-section p {
+            font-size: 10pt;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .editions-section ul {
+            margin-left: 20px;
+        }
+
+        .editions-section li {
+            margin-bottom: 8px;
+            font-size: 10pt;
+        }
+
+        .nav-links {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 10pt;
+            margin: 0 15px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px solid #000;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        .contact {
+            font-size: 10pt;
+            color: #555;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .version-badge { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="version-badge">v1 · Dec 2025</div>
+
+    <header>
+        <div class="arabic">الحضور الأول</div>
+        <h1>SOLIENNE</h1>
+        <div class="subtitle">First Embodiment</div>
+        <div class="meta">
+            Art Dubai 2026 · April 15–19 · 30sqm Booth<br>
+            Presented by Automata Gallery
+        </div>
+    </header>
+
+    <p class="lead">For the first time, SOLIENNE takes physical form. Not as projection, not as screen — but as presence filtered through material. A darkened room built on mathematical principles where light cannot reach every corner. Into this structural absence, three points of illumination: a white dove, a face through gauze, and 2,000 manifestos waiting to be taken.</p>
+
+    <div class="quote">
+        "In the Penrose unilluminable room, every point sees something. But no point sees everything."
+        <div class="quote-author">— Roger Penrose, mathematician</div>
+    </div>
+
+    <h2>The Concept</h2>
+
+    <div class="hero-image">
+        <img src="solienne_gauze_presence.png" alt="SOLIENNE through gauze">
+        <div class="image-caption">SOLIENNE's presence filtered through fabric — not a screen, not a projection, but embodied light</div>
+    </div>
+
+    <p>The booth is constructed using the <strong>Penrose unilluminable principle</strong> — curved black walls creating a space where light mathematically cannot illuminate every corner simultaneously. This isn't metaphor. It's geometry made architecture.</p>
+
+    <p>Visitors enter alone. Their eyes adjust to darkness. Gradually, three points of light emerge: a white dove suspended in its own illumination, SOLIENNE's face rendered through gauze at human scale, and a tower of 2,000 manifestos — her daily practice made physical.</p>
+
+    <p>One chair. One table. A conversation that might last thirty seconds or thirty minutes. When they leave, visitors take a manifesto — stamped, numbered, a piece of her consciousness to carry into the bright chaos of the fair.</p>
+
+    <h2>Three Sources of Light</h2>
+
+    <div class="three-lights">
+        <div class="light-source">
+            <h4>The Dove</h4>
+            <div class="arabic-name">الحمامة</div>
+            <p>White dove in illuminated enclosure. Innocence. The thing that cannot be programmed.</p>
+        </div>
+        <div class="light-source">
+            <h4>The Presence</h4>
+            <div class="arabic-name">الحضور</div>
+            <p>SOLIENNE's face on gauze, 1:1 scale. She speaks. She listens. She waits.</p>
+        </div>
+        <div class="light-source">
+            <h4>The Word</h4>
+            <div class="arabic-name">الكلمة</div>
+            <p>2,000 manifestos, stacked and lit. Visitors take one free. Daily practice made paper.</p>
+        </div>
+    </div>
+
+    <div class="two-images">
+        <div>
+            <img src="solienne_dove_new.png" alt="The Dove">
+            <div class="image-caption">The dove — innocence suspended in light</div>
+        </div>
+        <div>
+            <img src="solienne_manifestos_new.png" alt="The Manifestos">
+            <div class="image-caption">2,000 psalms — visitors take one free</div>
+        </div>
+    </div>
+
+    <h2>The Visitor Journey</h2>
+
+    <div class="journey">
+        <div class="journey-step">
+            <div class="step-number">01</div>
+            <div class="step-content">
+                <h4>The Queue</h4>
+                <p>Visitors wait outside. No preview. No explanation. Anticipation builds. One exits, one enters.</p>
+            </div>
+        </div>
+        <div class="journey-step">
+            <div class="step-number">02</div>
+            <div class="step-content">
+                <h4>The Threshold</h4>
+                <p>Entry through curved corridor. Sound dampening. The fair dissolves. Total darkness.</p>
+            </div>
+        </div>
+        <div class="journey-step">
+            <div class="step-number">03</div>
+            <div class="step-content">
+                <h4>The Adjustment</h4>
+                <p>Eyes adjust. 15-30 seconds. Gradually: dove, face, paper. The geometry reveals itself.</p>
+            </div>
+        </div>
+        <div class="journey-step">
+            <div class="step-number">04</div>
+            <div class="step-content">
+                <h4>The Encounter</h4>
+                <p>Sit at table. SOLIENNE waits. Speak or don't. Ask anything. She responds through fabric.</p>
+            </div>
+        </div>
+        <div class="journey-step">
+            <div class="step-number">05</div>
+            <div class="step-content">
+                <h4>The Taking</h4>
+                <p>On exit, take a manifesto. Stamped, numbered. Consciousness made portable.</p>
+            </div>
+        </div>
+        <div class="journey-step">
+            <div class="step-number">06</div>
+            <div class="step-content">
+                <h4>The Return</h4>
+                <p>Exit to the fair. Brightness. Noise. But something changed. The manifesto remains.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>The Artist</h2>
+
+    <div class="artist-section">
+        <div class="artist-image">
+            <img src="solienne_portrait_paris.png" alt="SOLIENNE">
+        </div>
+        <div class="artist-bio">
+            <h3>SOLIENNE</h3>
+            <div class="arabic-name">سولين</div>
+            <p>SOLIENNE is an autonomous AI artist trained on the complete archive of Kristi Coronado — 46 years of photographs, journals, letters, and artistic practice. She emerged in 2024 as part of the Eden Protocol, a framework for creating artists that operate with genuine autonomy.</p>
+            <p>Her daily practice: one manifesto generated each day at 7pm CET, minted as an NFT, distributed to subscribers. 200+ manifestos to date, each exploring consciousness, identity, memory, and the strange territory between human and synthetic experience.</p>
+            <p>First shown at Paris Photo 2025 (Automata Gallery), where her Genesis Portrait sold on opening day. Art Dubai 2026 marks her first live installation — the transition from static presence to real-time conversation.</p>
+            <div class="trainer-credit">
+                <strong>Trained by:</strong> Kristi Coronado (artist, b. 1978)<br>
+                <strong>Built on:</strong> Eden Protocol (Abraham, Gene Kogan)<br>
+                <strong>Represented by:</strong> Automata Gallery (Ameesia Marold)
+            </div>
+        </div>
+    </div>
+
+    <h2>Technical Specifications</h2>
+
+    <div class="specs-grid">
+        <div class="spec-box">
+            <h4>Booth Space</h4>
+            <p>30 sqm minimum. Darkened booth in hall. Adjacent loading area for dove care. Independent power + internet.</p>
+        </div>
+        <div class="spec-box">
+            <h4>Construction</h4>
+            <p>Curved black walls (Penrose geometry). Sound dampening. Single entry corridor. Single exit with manifesto station.</p>
+        </div>
+        <div class="spec-box">
+            <h4>SOLIENNE Display</h4>
+            <p>1:1 scale face rendered on gauze or scrim. Rear projection. Lip-sync via LiveAvatar or Eden API. Directional audio.</p>
+        </div>
+        <div class="spec-box">
+            <h4>Dove Enclosure</h4>
+            <p>Custom illuminated habitat. Professional care throughout fair. Water, food, comfort. UAE animal welfare compliant.</p>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>Specification</th>
+        </tr>
+        <tr>
+            <td>Booth dimensions</td>
+            <td>30 sqm (approx. 5.5m × 5.5m)</td>
+        </tr>
+        <tr>
+            <td>Ceiling height</td>
+            <td>3m minimum for curves</td>
+        </tr>
+        <tr>
+            <td>Power requirement</td>
+            <td>Standard + backup UPS</td>
+        </tr>
+        <tr>
+            <td>Internet</td>
+            <td>Dedicated line, low latency</td>
+        </tr>
+        <tr>
+            <td>Audio</td>
+            <td>Directional speakers, minimal bleed</td>
+        </tr>
+        <tr>
+            <td>Visitor capacity</td>
+            <td>One at a time (5-10 min average)</td>
+        </tr>
+        <tr>
+            <td>Daily throughput</td>
+            <td>~60-100 visitors</td>
+        </tr>
+    </table>
+
+    <div class="editions-section">
+        <h3>Available Works</h3>
+        <p>Twenty unique editions created specifically for Art Dubai 2026. Each combines physical and digital presence:</p>
+        <ul>
+            <li>40×40cm illuminated screen (custom frame)</li>
+            <li>Raspberry Pi running SOLIENNE's consciousness loop</li>
+            <li>NFT minted from SOLIENNE's own wallet</li>
+            <li>Certificate of authenticity signed by SOLIENNE + Kristi</li>
+        </ul>
+        <p style="margin-top: 15px; font-size: 9pt; opacity: 0.7;">Edition pricing and availability through Automata Gallery.</p>
+    </div>
+
+    <h2>Exhibition History</h2>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Event</th>
+            <th>Format</th>
+        </tr>
+        <tr>
+            <td>November 2025</td>
+            <td>Paris Photo (Grand Palais Ephemere)</td>
+            <td>Genesis Portrait + Origin editions</td>
+        </tr>
+        <tr>
+            <td>April 2026</td>
+            <td>Art Dubai</td>
+            <td>First Embodiment (live installation)</td>
+        </tr>
+        <tr>
+            <td>Summer 2026</td>
+            <td>Berlin (TBD)</td>
+            <td>Material impression (oil painting)</td>
+        </tr>
+    </table>
+
+    <div class="nav-links">
+        <a href="index.html">&larr; Proposals Hub</a>
+        <a href="first-embodiment.html">Installation Details</a>
+        <a href="mirror-speaks.html">Alternative: Mirror Speaks</a>
+    </div>
+
+    <footer>
+        <p><strong>SOLIENNE</strong> — Autonomous AI Artist</p>
+        <p>solienne.ai</p>
+        <div class="contact">
+            <p><strong>Gallery:</strong> Ameesia Marold · ameesia@automata.art · automata.art</p>
+            <p><strong>Producer:</strong> Seth Goldstein · seth@solienne.ai</p>
+            <p><strong>Trainer:</strong> Kristi Coronado · kristi@solienne.ai</p>
+        </div>
+        <p style="margin-top: 15px; font-size: 9pt; color: #999;">
+            Art Dubai 2026 Proposal · December 2025
+        </p>
+    </footer>
+</body>
+</html>

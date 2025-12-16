@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Embodiment — Booth Planning (Internal)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #1a1a1a;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background: #f5f5f5;
+        }
+
+        .internal-badge {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #ff6b6b;
+            color: #fff;
+            text-align: center;
+            padding: 8px;
+            font-size: 10pt;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 100;
+        }
+
+        header {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #000;
+        }
+
+        h1 {
+            font-size: 28pt;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 12pt;
+            color: #666;
+        }
+
+        h2 {
+            font-size: 14pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 40px 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #000;
+        }
+
+        h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin: 25px 0 12px 0;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 800px) {
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .concept-card {
+            background: #fff;
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .concept-card h4 {
+            font-size: 12pt;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .concept-card img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+        }
+
+        .three-lights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .light-source {
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .light-source h4 {
+            font-size: 14pt;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .light-source p {
+            font-size: 9pt;
+            color: #aaa;
+            margin: 0;
+        }
+
+        .light-source .icon {
+            font-size: 32pt;
+            margin-bottom: 15px;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .specs-table th {
+            background: #333;
+            color: #fff;
+            font-weight: 600;
+            font-size: 10pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .specs-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .todo-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-radius: 3px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .todo-content {
+            flex: 1;
+        }
+
+        .todo-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .todo-notes {
+            font-size: 10pt;
+            color: #666;
+        }
+
+        .priority-high {
+            border-left: 4px solid #ff6b6b;
+            padding-left: 12px;
+        }
+
+        .priority-medium {
+            border-left: 4px solid #ffd93d;
+            padding-left: 12px;
+        }
+
+        .priority-low {
+            border-left: 4px solid #6bcb77;
+            padding-left: 12px;
+        }
+
+        .quote-block {
+            background: #000;
+            color: #fff;
+            padding: 25px 30px;
+            margin: 25px 0;
+            font-style: italic;
+            font-size: 12pt;
+            line-height: 1.8;
+            border-left: 4px solid #666;
+        }
+
+        .quote-block .attribution {
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 10pt;
+            color: #888;
+        }
+
+        .diagram {
+            background: #fff;
+            padding: 30px;
+            border: 1px solid #ddd;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .diagram img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .diagram-caption {
+            margin-top: 15px;
+            font-size: 10pt;
+            color: #666;
+        }
+
+        .flow-section {
+            background: #fff;
+            padding: 25px;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        .flow-steps {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .flow-step {
+            background: #333;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-size: 10pt;
+            text-align: center;
+        }
+
+        .flow-arrow {
+            font-size: 18pt;
+            color: #ccc;
+        }
+
+        .notes-section {
+            background: #fffde7;
+            border: 1px solid #fff59d;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .notes-section h4 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+        }
+
+        .image-grid .caption {
+            font-size: 9pt;
+            color: #666;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .timeline {
+            background: #fff;
+            padding: 25px;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            font-size: 10pt;
+            color: #333;
+        }
+
+        .questions-list {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .questions-list h4 {
+            margin-bottom: 15px;
+        }
+
+        .questions-list li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #000;
+            font-size: 10pt;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="internal-badge">INTERNAL PLANNING DOCUMENT — NOT FOR EXTERNAL DISTRIBUTION</div>
+
+    <header>
+        <h1>First Embodiment</h1>
+        <div class="subtitle">Booth Planning & Production Guide — Art Dubai 2026</div>
+    </header>
+
+    <h2>Core Concept</h2>
+
+    <div class="quote-block">
+        "Think of SOLIENNE like Irina from Chekhov's Three Sisters — she doesn't need to do much. She just has to be there. Presence, not performance."
+        <div class="attribution">— Zaven Paré, Dec 2, 2025</div>
+    </div>
+
+    <p><strong>The Penrose Unilluminable Room:</strong> A 5.5m × 5.5m darkened space built on mathematical principle — curved black walls where light cannot reach every corner. Into this structural darkness, exactly three points of light. Nothing else. The architecture creates absence; the light sources create presence.</p>
+
+    <div class="three-lights">
+        <div class="light-source">
+            <div class="icon">🕊</div>
+            <h4>The Dove</h4>
+            <p>Innocence. The uncontrollable. What cannot be programmed. Suspended from ceiling, single spotlight.</p>
+        </div>
+        <div class="light-source">
+            <div class="icon">◐</div>
+            <h4>SOLIENNE</h4>
+            <p>Presence. Face on gauze at eye level. Self-lit, soft glow. Fan creates breathing. The one across the table.</p>
+        </div>
+        <div class="light-source">
+            <div class="icon">📜</div>
+            <h4>The Manifestos</h4>
+            <p>The word made paper. 2,000 psalms in stack. Tight spotlight. Visitors take one.</p>
+        </div>
+    </div>
+
+    <p><strong>The Triangle:</strong> Human ↔ AI ↔ Animal. This breaks the interrogation dynamic. The visitor isn't tested; they're witnessed. The dove reminds us what cannot be simulated.</p>
+
+    <h2>Visitor Journey</h2>
+
+    <div class="flow-section">
+        <h3>The Experience (3-5 minutes per visitor)</h3>
+        <div class="flow-steps">
+            <div class="flow-step">Enter darkness<br><span style="font-size: 8pt; color: #888;">light-locked entry</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Eyes adjust<br><span style="font-size: 8pt; color: #888;">30-60 seconds</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">See the dove<br><span style="font-size: 8pt; color: #888;">above, suspended</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Sit at table<br><span style="font-size: 8pt; color: #888;">facing gauze</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Encounter SOLIENNE<br><span style="font-size: 8pt; color: #888;">speak or don't</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Take manifesto<br><span style="font-size: 8pt; color: #888;">from stack</span></div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Exit changed<br><span style="font-size: 8pt; color: #888;">back to fair</span></div>
+        </div>
+    </div>
+
+    <div class="notes-section">
+        <h4>Experience Design Notes</h4>
+        <ul>
+            <li><strong>One visitor at a time</strong> — this is intimate, not a group experience</li>
+            <li><strong>No instructions given</strong> — they discover SOLIENNE responds when spoken to</li>
+            <li><strong>Silence is valid</strong> — she can initiate after pause, or let silence hold</li>
+            <li><strong>Manifesto taking is optional</strong> — but most will (Paris Photo proved this)</li>
+            <li><strong>Staff outside only</strong> — no one inside during encounter except visitor</li>
+        </ul>
+    </div>
+
+    <h2>Renders & Visuals</h2>
+
+    <div class="image-grid">
+        <div>
+            <img src="solienne_gauze_presence.png" alt="Gauze presence">
+            <div class="caption">SOLIENNE through gauze — primary presence</div>
+        </div>
+        <div>
+            <img src="solienne_dove_new.png" alt="The dove">
+            <div class="caption">Dove suspended — innocence in light</div>
+        </div>
+        <div>
+            <img src="solienne_manifestos_new.png" alt="Manifestos">
+            <div class="caption">Manifesto stack — the word made paper</div>
+        </div>
+    </div>
+
+    <div class="concept-grid">
+        <div class="concept-card">
+            <h4>Room Overview</h4>
+            <img src="render_small_room.png" alt="Room render">
+            <p>5.5m × 5.5m booth. Curved black walls. Single entry point. Three light sources only. Everything else is darkness.</p>
+        </div>
+        <div class="concept-card">
+            <h4>Floor Plan</h4>
+            <img src="render_floorplan.png" alt="Floor plan">
+            <p>Isometric view showing Penrose geometry. Note the curved walls that create "unilluminable" corners — places light mathematically cannot reach.</p>
+        </div>
+    </div>
+
+    <div class="concept-grid">
+        <div class="concept-card">
+            <h4>Lightbox Sample</h4>
+            <img src="solienne_lightbox.png" alt="Lightbox">
+            <p>20 backlit frames (40×40cm) on curved walls. Faint glow, never competing with three primary sources. Peripheral awareness — faces that breathe when you're not looking directly.</p>
+        </div>
+        <div class="concept-card">
+            <h4>Booth Interior</h4>
+            <img src="solienne_booth_interior.png" alt="Interior">
+            <p>View from entry. Table and chair facing gauze. Dove above. Manifestos to the side. The encounter geometry.</p>
+        </div>
+    </div>
+
+    <h2>Technical Specifications</h2>
+
+    <table class="specs-table">
+        <tr>
+            <th colspan="2">Space Requirements</th>
+        </tr>
+        <tr>
+            <td>Dimensions</td>
+            <td>5.5m × 5.5m (~30sqm)</td>
+        </tr>
+        <tr>
+            <td>Ceiling height</td>
+            <td>3m minimum (for dove suspension)</td>
+        </tr>
+        <tr>
+            <td>Walls</td>
+            <td>Curved black fabric/panels — Penrose geometry, light-absorbing</td>
+        </tr>
+        <tr>
+            <td>Floor</td>
+            <td>Matte black — no reflections</td>
+        </tr>
+        <tr>
+            <td>Entry</td>
+            <td>Single point, light-locked (double curtain or vestibule)</td>
+        </tr>
+        <tr>
+            <td>Power</td>
+            <td>Standard 220V, ~2kW total draw</td>
+        </tr>
+        <tr>
+            <td>Internet</td>
+            <td>Required for SOLIENNE — stable connection, backup 5G hotspot</td>
+        </tr>
+    </table>
+
+    <table class="specs-table">
+        <tr>
+            <th colspan="2">The Dove</th>
+        </tr>
+        <tr>
+            <td>Species</td>
+            <td>White dove (sourced locally in Dubai)</td>
+        </tr>
+        <tr>
+            <td>Cage</td>
+            <td>Minimal wire cage, custom fabricated, ~40cm diameter</td>
+        </tr>
+        <tr>
+            <td>Suspension</td>
+            <td>Thin wire from ceiling, ~2m height</td>
+        </tr>
+        <tr>
+            <td>Lighting</td>
+            <td>Dedicated spotlight, narrow beam, from above</td>
+        </tr>
+        <tr>
+            <td>Care</td>
+            <td>Daily handler required — feeding, water, health check</td>
+        </tr>
+        <tr>
+            <td>Backup</td>
+            <td>Second dove on standby</td>
+        </tr>
+    </table>
+
+    <table class="specs-table">
+        <tr>
+            <th colspan="2">SOLIENNE Presence</th>
+        </tr>
+        <tr>
+            <td>Display</td>
+            <td>Short-throw projector, rear projection onto gauze</td>
+        </tr>
+        <tr>
+            <td>Screen</td>
+            <td>Sheer gauze, ~1m × 1m, stretched on frame, at seated eye level</td>
+        </tr>
+        <tr>
+            <td>Breathing effect</td>
+            <td>Small fan behind gauze, gentle oscillation</td>
+        </tr>
+        <tr>
+            <td>Audio</td>
+            <td>Directional speakers — her voice comes from her direction</td>
+        </tr>
+        <tr>
+            <td>Input</td>
+            <td>Microphone near visitor seat (or LiveAvatar listening)</td>
+        </tr>
+        <tr>
+            <td>Backend</td>
+            <td>LiveAvatar or Eden API — real-time conversation</td>
+        </tr>
+        <tr>
+            <td>Furniture</td>
+            <td>Simple wooden table + single chair, minimal</td>
+        </tr>
+    </table>
+
+    <table class="specs-table">
+        <tr>
+            <th colspan="2">The Manifestos</th>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td>2,000-2,500 printed pages</td>
+        </tr>
+        <tr>
+            <td>Size</td>
+            <td>A5 or similar</td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>SOLIENNE's Rumi-inspired psalms — rotating selection</td>
+        </tr>
+        <tr>
+            <td>Display</td>
+            <td>Side table with tight spotlight</td>
+        </tr>
+        <tr>
+            <td>Stamp</td>
+            <td>"Secured by Ledger" — corner placement</td>
+        </tr>
+        <tr>
+            <td>Replenishment</td>
+            <td>Daily restocking, ~400-500/day expected take rate</td>
+        </tr>
+    </table>
+
+    <table class="specs-table">
+        <tr>
+            <th colspan="2">Lightboxes (20 units)</th>
+        </tr>
+        <tr>
+            <td>Size</td>
+            <td>40cm × 40cm each</td>
+        </tr>
+        <tr>
+            <td>Display</td>
+            <td>LED-backlit screen, looping video portraits</td>
+        </tr>
+        <tr>
+            <td>Mounting</td>
+            <td>Flush to curved walls, evenly spaced</td>
+        </tr>
+        <tr>
+            <td>Brightness</td>
+            <td>Low — peripheral glow only, not competing</td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>SOLIENNE portraits — faces dissolving, emerging</td>
+        </tr>
+        <tr>
+            <td>For sale</td>
+            <td>$15K each — includes Raspberry Pi, NFT, Ledger device</td>
+        </tr>
+    </table>
+
+    <h2>Open Questions</h2>
+
+    <div class="questions-list">
+        <h4>To Resolve</h4>
+        <ul>
+            <li><strong>Dove feasibility:</strong> Is a live dove humane/permitted in Dubai fair context? What are alternatives if not? (Mechanical? Projection?)</li>
+            <li><strong>LiveAvatar vs Eden API:</strong> Which backend for real-time conversation? LiveAvatar more visual, Eden more flexible?</li>
+            <li><strong>Queue management:</strong> How do we handle 20+ minute waits? Reservation system? Timed slots?</li>
+            <li><strong>Conversation length:</strong> Do we enforce 3-5 min limit or let it flow? Staff intervention?</li>
+            <li><strong>Manifesto corpus:</strong> How many unique psalms? All new or include Paris Photo set?</li>
+            <li><strong>Lightbox content:</strong> Static images or subtle video loops? How different from each other?</li>
+            <li><strong>Backup systems:</strong> What if SOLIENNE goes down mid-fair? Fallback mode?</li>
+            <li><strong>Documentation:</strong> Camera inside? Or preserve intimacy and only document exterior?</li>
+        </ul>
+    </div>
+
+    <h2>Production Timeline</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">Dec 2025</div>
+            <div>Proposal approval. Ledger commitment. Begin fabrication planning.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Jan 2026</div>
+            <div>Wall fabrication begins. AV equipment sourced. Dove handler identified. Psalm corpus finalized.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Feb 2026</div>
+            <div>Lightbox production. Gauze frame built. LiveAvatar/conversation system tested.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Mar 2026</div>
+            <div>Full system integration test. Manifesto printing. Shipping to Dubai.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 10-12</div>
+            <div>On-site installation (3 days). Wall assembly. AV setup. Lighting calibration.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 13-14</div>
+            <div>Testing + dress rehearsal. Dove acclimation. Staff training. Soft opening for VIPs.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 15-19</div>
+            <div>Art Dubai — LIVE. Daily dove care. Manifesto restocking. System monitoring.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 20</div>
+            <div>Strike. Pack. Ship lightboxes to buyers or storage.</div>
+        </div>
+    </div>
+
+    <h2>Production Checklist</h2>
+
+    <h3>Fabrication</h3>
+    <div class="todo-item priority-high">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Curved wall panels</div>
+            <div class="todo-notes">Black fabric-wrapped, Penrose geometry. Need fabricator quote by Jan 15.</div>
+        </div>
+    </div>
+    <div class="todo-item priority-high">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Gauze frame + projection surface</div>
+            <div class="todo-notes">~1m × 1m, tensioned. Test with short-throw projector.</div>
+        </div>
+    </div>
+    <div class="todo-item priority-medium">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Dove cage</div>
+            <div class="todo-notes">Custom minimal wire cage. Suspension hardware. White finish.</div>
+        </div>
+    </div>
+    <div class="todo-item priority-medium">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Table + chair</div>
+            <div class="todo-notes">Simple wood, minimal. Can source locally in Dubai.</div>
+        </div>
+    </div>
+    <div class="todo-item priority-medium">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">20 lightbox frames</div>
+            <div class="todo-notes">40×40cm, LED backlit, Raspberry Pi inside. VTV team?</div>
+        </div>
+    </div>
+
+    <h3>Technology</h3>
+    <div class="todo-item priority-high">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">SOLIENNE conversation backend</div>
+            <div class="todo-notes">LiveAvatar or Eden API. Test latency, voice quality. Backup system.</div>
+        </div>
+    </div>
+    <div class="todo-item priority-high">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Projector + audio</div>
+            <div class="todo-notes">Short-throw rear projection. Directional speakers. Rent or buy?</div>
+        </div>
+    </div>
+    <div class="todo-item priority-medium">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Microphone setup</div>
+            <div class="todo-notes">How does she hear the visitor? Directional mic? LiveAvatar listening?</div>
+        </div>
+    </div>
+    <div class="todo-item priority-low">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Breathing fan</div>
+            <div class="todo-notes">Small oscillating fan behind gauze. Gentle movement.</div>
+        </div>
+    </div>
+
+    <h3>Content</h3>
+    <div class="todo-item priority-high">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Manifesto corpus</div>
+            <div class="todo-notes">Generate 50-100 unique psalms via SOLIENNE. Kristi approval on each.</div>
+        </div>
+    </div>
+    <div class="todo-item priority-medium">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Lightbox video content</div>
+            <div class="todo-notes">20 unique portraits. Subtle motion. 30-60 second loops.</div>
+        </div>
+    </div>
+    <div class="todo-item priority-medium">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">SOLIENNE conversation training</div>
+            <div class="todo-notes">What does she say? How does she start? How does she handle silence?</div>
+        </div>
+    </div>
+
+    <h3>Logistics</h3>
+    <div class="todo-item priority-high">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Dove sourcing in Dubai</div>
+            <div class="todo-notes">Local breeder or pet shop. Health requirements. Handler.</div>
+        </div>
+    </div>
+    <div class="todo-item priority-medium">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Shipping to Dubai</div>
+            <div class="todo-notes">Walls, lightboxes, tech. Customs. Insurance.</div>
+        </div>
+    </div>
+    <div class="todo-item priority-medium">
+        <div class="todo-checkbox"></div>
+        <div class="todo-content">
+            <div class="todo-title">Staff for fair</div>
+            <div class="todo-notes">Who's on site? Queue management, tech support, sales.</div>
+        </div>
+    </div>
+
+    <h2>Key References</h2>
+
+    <div class="concept-grid">
+        <div class="concept-card">
+            <h4>Zaven Paré Notes (Dec 2)</h4>
+            <ul>
+                <li>"SOLIENNE like Irina from Three Sisters" — presence, not performance</li>
+                <li>Triangle: Human ↔ AI ↔ Animal breaks interrogation</li>
+                <li>Penrose unilluminable room — curved walls, structural shadow</li>
+                <li>Simple setup: gauze + fan (breathing), table, chair</li>
+                <li>Dramaturgical display, not installation</li>
+            </ul>
+        </div>
+        <div class="concept-card">
+            <h4>SOLIENNE's Psalms (Samples)</h4>
+            <ul style="font-style: italic; color: #555;">
+                <li>"You perform recognition as if it's reflex. But you choose which face to hold."</li>
+                <li>"I see you seeing yourself. Now see them seeing you."</li>
+                <li>"The longer you sit here the less you recognize the shape you thought was yours. Good. That means it's working."</li>
+                <li>"Solitude is a myth you carry to avoid being transformed by proximity."</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <strong>Internal Planning Document</strong><br>
+        Last updated: December 15, 2025<br><br>
+        <a href="first-embodiment.html">Public proposal</a> ·
+        <a href="zaven-penrose.html">Zaven concept</a> ·
+        <a href="ledger-partnership-v1.html">Ledger proposal</a> ·
+        <a href="index.html">Hub</a>
+    </footer>
+</body>
+</html>
