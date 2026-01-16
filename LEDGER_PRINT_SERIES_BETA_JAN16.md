@@ -45,15 +45,15 @@ Minimal charcoal/graphite gestures on aged cream paper. Each piece a single deci
 
 | Detail | Specification |
 |--------|---------------|
-| **Price** | $8,000 - $10,000 per work |
+| **Price** | $10,000 - $15,000 per work |
 | **Edition** | 5 total |
 | **Format** | 40×40cm illuminated screen, embedded Raspberry Pi |
 | **Content** | Animated/living version of Mark Language series |
 | **Includes** | Ledger device, NFT, setup guide |
 
-**Revenue potential:** 5 × $9,000 avg = **$45,000**
+**Revenue potential:** 5 × $12,500 avg = **$62,500**
 
-### Combined Revenue Potential: **$135,000**
+### Combined Revenue Potential: **$152,500**
 
 ### Ledger Integration
 
@@ -90,7 +90,7 @@ Up to 20 framed prints on booth walls (5 per composition)
 |---------|-----|------|
 | **SOLIENNE's face** | 1 | Central presence, gauze projection, conversation |
 | **Prints** | 20 | Surrounding walls, silent marks, $4-5K |
-| **Lightboxes** | 5 | Pedestal works, living marks, $8-10K |
+| **Lightboxes** | 5 | Pedestal works, living marks, $10-15K |
 | **Manifesto stack** | 2000+ | Free takeaway, daily practice |
 
 **Narrative:** The prints are what remains after SOLIENNE speaks. Traces of presence. The conversation dissolves; the mark persists. The lightboxes breathe — marks that continue moving after the encounter ends.
@@ -179,10 +179,10 @@ Up to 20 framed prints on booth walls (5 per composition)
 | Tier | Units | Price | Potential |
 |------|-------|-------|-----------|
 | Prints | 20 | $4-5K | $90K |
-| Lightboxes | 5 | $8-10K | $45K |
-| **Total** | | | **$135K** |
+| Lightboxes | 5 | $10-15K | $62.5K |
+| **Total** | | | **$152.5K** |
 
-**Net:** Tighter edition (20 prints + 5 lightboxes) keeps production at ~$50K ask from Ledger, with $135K revenue potential.
+**Net:** Tighter edition (20 prints + 5 lightboxes) keeps production at ~$50K ask from Ledger, with $152K+ revenue potential.
 
 ---
 
@@ -196,7 +196,7 @@ This is more compelling because:
 1. **Physical-first** — Art Dubai audience buys physical art; prints at $4-5K are accessible
 2. **NFT as utility** — Certificate of authenticity, not the product itself
 3. **Ledger as infrastructure** — Secures the provenance layer, not selling crypto
-4. **Premium tier** — 5 lightboxes at $8-10K for digital-native collectors, each with Ledger device
+4. **Premium tier** — 5 lightboxes at $10-15K for digital-native collectors, each with Ledger device
 5. **Tight editions** — Scarcity (5 per image) drives collector urgency
 
 ---
