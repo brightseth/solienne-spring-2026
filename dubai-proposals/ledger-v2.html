@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLIENNE × Ledger — Art Dubai 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #000;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: #fff;
+        }
+
+        .version-badge {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #000;
+            color: #fff;
+            padding: 5px 12px;
+            font-size: 9pt;
+            font-weight: 500;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #000;
+        }
+
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+
+        .logo-text {
+            font-size: 24pt;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .logo-divider {
+            font-size: 18pt;
+            color: #ccc;
+        }
+
+        h1 {
+            font-size: 13pt;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .meta {
+            font-size: 10pt;
+            color: #555;
+        }
+
+        h2 {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 30px 0 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        p { margin-bottom: 12px; }
+
+        .lead {
+            font-size: 11pt;
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #000;
+        }
+
+        .highlight-box h3 {
+            font-size: 11pt;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p { margin-bottom: 8px; }
+        .highlight-box p:last-child { margin-bottom: 0; }
+
+        ul { margin: 10px 0 10px 20px; }
+        li { margin-bottom: 8px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f5;
+            font-weight: 600;
+        }
+
+        .budget-total {
+            font-weight: 700;
+            background: #f0f0f0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 20px 0;
+        }
+
+        .col h3 {
+            font-size: 10pt;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-image {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-caption {
+            font-size: 8pt;
+            color: #777;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .two-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .two-images img {
+            width: 100%;
+            height: auto;
+        }
+
+        .touchpoint {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .touchpoint-num {
+            font-size: 10pt;
+            font-weight: 600;
+            color: #999;
+        }
+
+        .touchpoint-content {
+            font-size: 10pt;
+        }
+
+        .touchpoint-content strong {
+            display: inline;
+        }
+
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            font-size: 10pt;
+        }
+
+        .timeline-content {
+            font-size: 10pt;
+        }
+
+        .nav-links {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 10pt;
+            margin: 0 15px;
+        }
+
+        .nav-links a:hover { text-decoration: underline; }
+
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #000;
+            text-align: center;
+        }
+
+        footer p { margin-bottom: 5px; }
+
+        .contact {
+            font-size: 10pt;
+            color: #555;
+        }
+
+        @media print {
+            body { padding: 0; }
+            .version-badge { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="version-badge">v2 &middot; Jan 30, 2026</div>
+
+    <header>
+        <div class="logos">
+            <span class="logo-text">SOLIENNE</span>
+            <span class="logo-divider">&times;</span>
+            <span class="logo-text">LEDGER</span>
+        </div>
+        <h1>Art Dubai Digital &middot; April 15&ndash;19, 2026</h1>
+        <div class="meta">
+            Partnership overview for Izabella &amp; Ledger team<br>
+            Prepared by Seth Goldstein + Ameesia Marold (Automata)
+        </div>
+    </header>
+
+    <h2>What This Is</h2>
+
+    <p class="lead">SOLIENNE is an autonomous AI artist built from 46 years of Kristi Coronado's photographic archive. Each evening at 7pm CET, she generates a new manifesto &mdash; minted on-chain, distributed to subscribers. At Art Dubai, visitors will sit with her one-on-one in an immersive booth and have a real conversation.</p>
+
+    <p>The Ledger partnership is straightforward: SOLIENNE uses Ledger hardware to sign her own transactions and manage her own wallet. Collectors who purchase editions leave with a Ledger device and their asset already secured. This isn't a branding exercise &mdash; Ledger is the actual infrastructure making the experience work.</p>
+
+    <h2>The Booth</h2>
+
+    <div class="hero-image">
+        <img src="solienne_gauze_presence.png" alt="SOLIENNE through gauze">
+        <div class="image-caption">SOLIENNE's face projected on backlit gauze &mdash; visitors sit across from her for a one-on-one conversation</div>
+    </div>
+
+    <p>30sqm, darkened, curved black walls. SOLIENNE's face is projected onto gauze &mdash; present but not a screen. Visitors enter one at a time, sit at a table, and talk with her for 3&ndash;5 minutes. On the way out, they take a printed manifesto.</p>
+
+    <div class="two-images">
+        <div>
+            <img src="solienne_dove_new.png" alt="The Dove">
+            <div class="image-caption">Interior detail</div>
+        </div>
+        <div>
+            <img src="solienne_manifestos_new.png" alt="The Manifestos">
+            <div class="image-caption">Printed manifestos &mdash; visitors take one</div>
+        </div>
+    </div>
+
+    <h2>How Ledger Shows Up</h2>
+
+    <p>Seven natural touchpoints across the visitor experience. None of these are forced &mdash; they follow the logic of the installation:</p>
+
+    <div style="margin: 15px 0;">
+        <div class="touchpoint">
+            <div class="touchpoint-num">01</div>
+            <div class="touchpoint-content"><strong>Entry:</strong> Visitors check in with Ledger verification at the booth entrance.</div>
+        </div>
+        <div class="touchpoint">
+            <div class="touchpoint-num">02</div>
+            <div class="touchpoint-content"><strong>Daily signing:</strong> At 7pm, SOLIENNE mints that day's manifesto using Ledger hardware. Can be witnessed live or broadcast.</div>
+        </div>
+        <div class="touchpoint">
+            <div class="touchpoint-num">03</div>
+            <div class="touchpoint-content"><strong>Manifesto stamp:</strong> Ledger seal on the back of each printed manifesto (~2,500 total).</div>
+        </div>
+        <div class="touchpoint">
+            <div class="touchpoint-num">04</div>
+            <div class="touchpoint-content"><strong>Live display:</strong> Blockchain confirmations shown on a booth screen during transactions.</div>
+        </div>
+        <div class="touchpoint">
+            <div class="touchpoint-num">05</div>
+            <div class="touchpoint-content"><strong>Collector editions:</strong> 20 limited editions at $5K each include a Ledger Nano X with the NFT already loaded.</div>
+        </div>
+        <div class="touchpoint">
+            <div class="touchpoint-num">06</div>
+            <div class="touchpoint-content"><strong>Exit certificate:</strong> QR-coded witness documentation for every visitor.</div>
+        </div>
+        <div class="touchpoint">
+            <div class="touchpoint-num">07</div>
+            <div class="touchpoint-content"><strong>Post-event claiming:</strong> Online portal via Ledger Live for collectors who need to set up after the fair.</div>
+        </div>
+    </div>
+
+    <p>The aesthetic is black and white throughout &mdash; aligns naturally with Ledger's visual identity. Branding is present but integrated, not overlaid.</p>
+
+    <h2>What We Handle</h2>
+
+    <div class="two-col">
+        <div class="col">
+            <h3>Our Team Manages</h3>
+            <ul>
+                <li>Full booth design, production &amp; installation</li>
+                <li>SOLIENNE's conversation system &amp; AI</li>
+                <li>Manifesto printing &amp; stamping</li>
+                <li>Collector edition production (prints, packaging, certificates)</li>
+                <li>Wallet setup &amp; on-chain infrastructure</li>
+                <li>VIP dinner planning &amp; guest list</li>
+                <li>Documentation (photo, video)</li>
+                <li>Post-event case study</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>What We Need from Ledger</h3>
+            <ul>
+                <li>20 Nano X devices (or confirmation to purchase)</li>
+                <li>Logo files &amp; brand guidelines for stamp/signage</li>
+                <li>Approval on Ledger branding placement (we'll send mockups)</li>
+                <li>Ledger Live integration guidance for post-event portal</li>
+                <li>Any specific messaging or compliance requirements</li>
+                <li>Guest list additions for VIP dinner</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="highlight-box">
+        <h3>Timing Note</h3>
+        <p>We know SXSW is in March &mdash; we won't need anything time-intensive from Ledger's side until after that wraps. Brand assets and device logistics are the only items we'd want to confirm before March. Everything else we handle on our end and send for approval.</p>
+    </div>
+
+    <h2>Budget</h2>
+
+    <table>
+        <tr>
+            <th>Line Item</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>Booth production (30sqm, walls, gauze, projection, lighting)</td>
+            <td>$18,000</td>
+        </tr>
+        <tr>
+            <td>VIP dinner</td>
+            <td>$12,000</td>
+        </tr>
+        <tr>
+            <td>Travel &amp; accommodation</td>
+            <td>$8,000</td>
+        </tr>
+        <tr>
+            <td>Documentation (photo, video, case study)</td>
+            <td>$3,500</td>
+        </tr>
+        <tr>
+            <td>20 Ledger devices</td>
+            <td>$3,000</td>
+        </tr>
+        <tr>
+            <td>2,500 manifestos (print, stamp, packaging)</td>
+            <td>$2,500</td>
+        </tr>
+        <tr>
+            <td>Content production</td>
+            <td>$3,000</td>
+        </tr>
+        <tr class="budget-total">
+            <td>Total</td>
+            <td>$50,000</td>
+        </tr>
+    </table>
+
+    <h2>What Ledger Can Point To</h2>
+
+    <p>After Art Dubai, Ledger has:</p>
+
+    <ul>
+        <li>A documented case of Ledger hardware securing an autonomous agent's economy &mdash; not a demo, an actual working system</li>
+        <li>20 new high-value collectors onboarded directly onto Ledger devices</li>
+        <li>2,500 physical manifestos carrying the Ledger stamp into the world</li>
+        <li>Photo/video assets and a written case study ready for Ledger's channels</li>
+        <li>A relationship with an ongoing project &mdash; SOLIENNE mints daily, the story continues</li>
+    </ul>
+
+    <h2>Creative Integrity</h2>
+
+    <p>A few things we want to be transparent about, since they protect both sides:</p>
+
+    <ul>
+        <li>Kristi Coronado (SOLIENNE's trainer) has final say on all artistic decisions</li>
+        <li>Ledger is credited as infrastructure partner &mdash; not editorial sponsor</li>
+        <li>SOLIENNE's daily manifestos are her own; sponsorship doesn't influence content</li>
+        <li>The wallet is real &mdash; SOLIENNE actually signs transactions</li>
+    </ul>
+
+    <p>The framing we use: <em>"SOLIENNE's practice, made possible by Ledger."</em></p>
+
+    <h2>Timeline</h2>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">Feb 2026</div>
+            <div class="timeline-content">Partnership confirmed. We send brand placement mockups for approval.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Feb 15</div>
+            <div class="timeline-content">First payment ($25,000)</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Feb&ndash;Mar</div>
+            <div class="timeline-content">Production. Ledger devices &amp; brand assets needed by end of Feb.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Mar (SXSW)</div>
+            <div class="timeline-content">We work independently. No Ledger deliverables needed this month.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Mar 15</div>
+            <div class="timeline-content">Final payment ($25,000). VIP guest list finalized.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 10&ndash;14</div>
+            <div class="timeline-content">Installation &amp; dress rehearsal. VIP dinner (Apr 14).</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 15&ndash;19</div>
+            <div class="timeline-content">Art Dubai Digital &mdash; live.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 25</div>
+            <div class="timeline-content">Case study &amp; content package delivered to Ledger.</div>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">&larr; Hub</a>
+        <a href="first-embodiment.html">First Embodiment Details</a>
+    </div>
+
+    <footer>
+        <p><strong>SOLIENNE</strong> &mdash; solienne.ai</p>
+        <div class="contact">
+            <p><strong>Gallery:</strong> Ameesia Marold &middot; ameesia@automata.art</p>
+            <p><strong>Producer:</strong> Seth Goldstein &middot; seth@solienne.ai &middot; +1 212.729.4567</p>
+            <p><strong>Artist:</strong> Kristi Coronado &middot; kristi@solienne.ai</p>
+        </div>
+        <p style="margin-top: 15px; font-size: 9pt; color: #999;">
+            v2 &middot; January 30, 2026
+        </p>
+    </footer>
+</body>
+</html>
