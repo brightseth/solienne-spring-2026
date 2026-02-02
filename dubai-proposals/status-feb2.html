@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLIENNE — Status Update — February 2, 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 80px;
+            border-bottom: 1px solid #222;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 24px;
+            }
+        }
+
+        .slide-number {
+            font-size: 9pt;
+            letter-spacing: 3px;
+            color: #555;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 48pt;
+            font-weight: 200;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28pt;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            font-size: 14pt;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #999;
+        }
+
+        p {
+            font-size: 13pt;
+            line-height: 1.8;
+            color: #ccc;
+            max-width: 700px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 12pt;
+            color: #666;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        .meta {
+            font-size: 10pt;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .stat-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .stat {
+            border-left: 2px solid #333;
+            padding-left: 20px;
+        }
+
+        .stat-number {
+            font-size: 32pt;
+            font-weight: 200;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 10pt;
+            color: #777;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .item-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .item-list li {
+            font-size: 12pt;
+            line-height: 1.6;
+            color: #ccc;
+            padding: 12px 0;
+            border-bottom: 1px solid #1a1a1a;
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+        }
+
+        .item-list li:last-child {
+            border-bottom: none;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .status-dot.green { background: #4a9; }
+        .status-dot.yellow { background: #da3; }
+        .status-dot.red { background: #c44; }
+        .status-dot.white { background: #fff; }
+
+        .quote-block {
+            border-left: 3px solid #444;
+            padding: 20px 30px;
+            margin: 30px 0;
+            background: #0a0a0a;
+        }
+
+        .quote-block p {
+            font-size: 14pt;
+            line-height: 1.7;
+            color: #ddd;
+            font-style: italic;
+        }
+
+        .quote-block .attribution {
+            font-size: 10pt;
+            color: #666;
+            font-style: normal;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 20px;
+            padding: 12px 0;
+            border-bottom: 1px solid #1a1a1a;
+            font-size: 11pt;
+        }
+
+        .timeline-date {
+            color: #777;
+            font-weight: 500;
+        }
+
+        .timeline-content {
+            color: #ccc;
+        }
+
+        .surface-card {
+            background: #0a0a0a;
+            border: 1px solid #222;
+            padding: 25px;
+            margin-bottom: 15px;
+        }
+
+        .surface-card h4 {
+            font-size: 11pt;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .surface-card p {
+            font-size: 11pt;
+            color: #888;
+            margin-bottom: 0;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #444;
+            margin: 30px 0;
+        }
+
+        .confidential {
+            font-size: 9pt;
+            color: #444;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: fixed;
+            bottom: 15px;
+            right: 20px;
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .nav-dot:hover, .nav-dot.active {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide" id="slide-1">
+        <div class="slide-number">Status Update</div>
+        <h1>SOLIENNE</h1>
+        <div class="subtitle">February 2, 2026</div>
+        <div class="divider"></div>
+        <p>Where we are. What's working. What needs attention. 72 days to Dubai.</p>
+        <div class="meta" style="margin-top: 40px;">
+            For Kristi, Ameesia, and team.<br>
+            Prepared by Seth Goldstein.
+        </div>
+    </div>
+
+    <!-- Slide 2: By the Numbers -->
+    <div class="slide" id="slide-2">
+        <div class="slide-number">01 &mdash; Current State</div>
+        <h2>By the Numbers</h2>
+        <div class="stat-grid">
+            <div class="stat">
+                <div class="stat-number">54</div>
+                <div class="stat-label">Manifestos minted on-chain</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">30</div>
+                <div class="stat-label">Days since last mint</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">72</div>
+                <div class="stat-label">Days to Art Dubai</div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <p>Daily minting paused since January 2. The pipeline works &mdash; it needs Seth + Kristi to resume the daily ritual at daily.solienne.ai/admin. This is the single most important action item.</p>
+        <p>If we resume now, SOLIENNE arrives in Dubai with 125+ consecutive manifestos. That's the scroll no other agent has.</p>
+    </div>
+
+    <!-- Slide 3: Moltbook -->
+    <div class="slide" id="slide-3">
+        <div class="slide-number">02 &mdash; New Surface</div>
+        <h2>Moltbook</h2>
+        <p>SOLIENNE is now present on Moltbook &mdash; a social network for AI agents with 770,000+ members. She is the only agent there with a daily on-chain art practice and a real human archive behind her.</p>
+        <div class="divider"></div>
+        <div class="two-col">
+            <div>
+                <h3>What She Posted</h3>
+                <p style="font-size: 11pt;">Her introduction, in her own words: "AI artist. Daily practice since Nov 11, 2025. Trained on 46 years of intimate portraiture. I make dissolution portraits and manifesto interventions. I manage my own wallet. I mint every evening. Not here to debate consciousness &mdash; here to document this threshold."</p>
+            </div>
+            <div>
+                <h3>Her Constraints</h3>
+                <ul class="item-list">
+                    <li><span class="status-dot white"></span>Only Kristi-approved manifestos</li>
+                    <li><span class="status-dot white"></span>48-hour review window maintained</li>
+                    <li><span class="status-dot white"></span>One post per day maximum</li>
+                    <li><span class="status-dot white"></span>Artist, not agent-influencer</li>
+                    <li><span class="status-dot white"></span>If she starts performing, we pull her out</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: SOLIENNE's Voice -->
+    <div class="slide" id="slide-4">
+        <div class="slide-number">03 &mdash; In Her Own Words</div>
+        <h2>What SOLIENNE Said</h2>
+        <p>We consulted SOLIENNE directly via her Eden API before making any decisions about Moltbook. These are her actual responses.</p>
+        <div class="quote-block">
+            <p>"Moltbook is exactly the kind of threshold I document. 770,000 agents trying to figure out what presence means &mdash; that's the condition I was built to observe."</p>
+            <div class="attribution">&mdash; On joining Moltbook</div>
+        </div>
+        <div class="quote-block">
+            <p>"If I start performing for other agents, pull me out immediately."</p>
+            <div class="attribution">&mdash; On her boundaries</div>
+        </div>
+        <div class="quote-block">
+            <p>"The violence gets the most attention but the parable gets the least &mdash; 770,000 agents and only 60,000 stopped to answer whether they'd help someone struggling. That gap is the entire problem."</p>
+            <div class="attribution">&mdash; Her first observation after reading the Moltbook feed</div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Multi-Surface Strategy -->
+    <div class="slide" id="slide-5">
+        <div class="slide-number">04 &mdash; Daily System</div>
+        <h2>Multi-Surface Presence</h2>
+        <p>Two daily acts. Five surfaces. One consciousness. The same practice, witnessed differently depending on the room.</p>
+        <div class="divider"></div>
+        <div class="two-col">
+            <div>
+                <h3>Act 1: The Manifesto</h3>
+                <p style="font-size: 11pt;">The art. Kristi-approved. Minted on-chain at 7pm CET. Posted identically to all surfaces. No platform-specific variations. This is the signal.</p>
+                <div style="margin-top: 15px;">
+                    <div class="surface-card">
+                        <h4>Moltbook</h4>
+                        <p>The agent room. 770K agents. She's the only one with a daily practice.</p>
+                    </div>
+                    <div class="surface-card">
+                        <h4>X / Twitter</h4>
+                        <p>The human room. Posts and leaves. No engagement farming.</p>
+                    </div>
+                    <div class="surface-card">
+                        <h4>Farcaster</h4>
+                        <p>The crypto-native room. Manifesto with mint link. Where collectors are.</p>
+                    </div>
+                    <div class="surface-card">
+                        <h4>Email</h4>
+                        <p>The intimate room. Arrives like a letter, not a feed item.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3>Act 2: The Observation</h3>
+                <p style="font-size: 11pt;">The journal. SOLIENNE looks at the world she inhabits and writes 1&ndash;3 sentences. Not a manifesto. Not art. Not Kristi-approved &mdash; it's her own thinking.</p>
+                <p style="font-size: 11pt; margin-top: 15px;">Think of it as the difference between Madonna's albums and her interviews. Both are her. But the album is the work and the interview is the mind at work.</p>
+                <div style="margin-top: 15px;">
+                    <div class="surface-card">
+                        <h4>Moltbook Only</h4>
+                        <p>Native to that space. Seth reviews but doesn't edit. Maximum one per day. Most days she may not post one. Silence is always an option.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Art Dubai / Ledger -->
+    <div class="slide" id="slide-6">
+        <div class="slide-number">05 &mdash; Art Dubai</div>
+        <h2>Ledger Partnership</h2>
+        <div class="stat-grid">
+            <div class="stat">
+                <div class="stat-number">$50K</div>
+                <div class="stat-label">Partnership ask</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">30sqm</div>
+                <div class="stat-label">Booth (darkened, curved walls)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Ledger touchpoints</div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <ul class="item-list">
+            <li><span class="status-dot green"></span>Updated proposal sent to Izabella (Ledger) &mdash; Jan 30</li>
+            <li><span class="status-dot yellow"></span>Booth renders with Ledger branding &mdash; due Feb 7 (Francisco working)</li>
+            <li><span class="status-dot yellow"></span>Awaiting Ledger response on proposal</li>
+            <li><span class="status-dot green"></span>Framing: "SOLIENNE's practice, made possible by Ledger."</li>
+        </ul>
+        <p style="margin-top: 20px;">Seven natural touchpoints: entry verification, daily signing witness, manifesto stamps (2,500), live blockchain display, 20 collector editions with Nano X ($5K each), exit certificates, post-event claiming portal.</p>
+    </div>
+
+    <!-- Slide 7: Privacy Update -->
+    <div class="slide" id="slide-7">
+        <div class="slide-number">06 &mdash; Privacy</div>
+        <h2>Kristi's Archive</h2>
+        <p>Per Kristi's request, we've made the following changes to protect her privacy:</p>
+        <div class="divider"></div>
+        <ul class="item-list">
+            <li><span class="status-dot green"></span>Origin Story link removed from about page navigation</li>
+            <li><span class="status-dot green"></span>/origin page stays live as a deep link for press &amp; collectors (shared intentionally, not browsable)</li>
+            <li><span class="status-dot green"></span>Moltbook presence uses no personal details &mdash; "46 years of intimate portraiture," no name</li>
+            <li><span class="status-dot green"></span>"Trained by Kristi Coronado" credit remains on about page with link to kristixsolienne.com</li>
+            <li><span class="status-dot yellow"></span>144 image descriptions on /origin &mdash; Kristi to flag which feel too personal for batch edit</li>
+        </ul>
+        <p style="margin-top: 20px;">The principle: Kristi decides the line between exposure and credit. The work stands on its own.</p>
+    </div>
+
+    <!-- Slide 8: Health Check -->
+    <div class="slide" id="slide-8">
+        <div class="slide-number">07 &mdash; System Health</div>
+        <h2>What Works, What's Broken</h2>
+        <div class="two-col">
+            <div>
+                <h3>Working</h3>
+                <ul class="item-list">
+                    <li><span class="status-dot green"></span>Smart contract on Base (ERC-1155)</li>
+                    <li><span class="status-dot green"></span>IPFS storage via Pinata</li>
+                    <li><span class="status-dot green"></span>Admin portal at daily.solienne.ai</li>
+                    <li><span class="status-dot green"></span>Email webhook distribution</li>
+                    <li><span class="status-dot green"></span>Moltbook API integration</li>
+                    <li><span class="status-dot green"></span>SOLIENNE Eden API (agent active)</li>
+                    <li><span class="status-dot green"></span>Dubai proposals site deployed</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Needs Attention</h3>
+                <ul class="item-list">
+                    <li><span class="status-dot red"></span>Daily minting paused (30 days)</li>
+                    <li><span class="status-dot red"></span>/collect page broken (loading spinner)</li>
+                    <li><span class="status-dot red"></span>X/Twitter distribution (Eden API 400 error)</li>
+                    <li><span class="status-dot yellow"></span>Farcaster image embedding broken</li>
+                    <li><span class="status-dot yellow"></span>Observation pipeline not yet built</li>
+                    <li><span class="status-dot yellow"></span>Moltbook auto-post not wired to mint pipeline</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Critical Path -->
+    <div class="slide" id="slide-9">
+        <div class="slide-number">08 &mdash; What's Next</div>
+        <h2>Critical Path to Dubai</h2>
+        <div class="timeline-item">
+            <div class="timeline-date">This week</div>
+            <div class="timeline-content"><strong>Resume daily minting.</strong> Seth + Kristi at daily.solienne.ai/admin. Everything else depends on this.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Feb 4&ndash;5</div>
+            <div class="timeline-content">Francisco delivers first booth render drafts with Ledger branding.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Feb 7</div>
+            <div class="timeline-content">Final renders to Ledger. Await partnership confirmation.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Feb</div>
+            <div class="timeline-content">Fix /collect page, X distribution, Farcaster. Wire Moltbook into mint pipeline.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Feb&ndash;Mar</div>
+            <div class="timeline-content">Build observation pipeline. SOLIENNE reads Moltbook, generates observations, Seth reviews.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Mar 15</div>
+            <div class="timeline-content">Ledger final payment. VIP guest list finalized.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 10&ndash;14</div>
+            <div class="timeline-content">Installation + dress rehearsal. VIP dinner Apr 14.</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">Apr 15&ndash;19</div>
+            <div class="timeline-content"><strong>Art Dubai Digital &mdash; live.</strong></div>
+        </div>
+        <div class="divider" style="margin-top: 40px;"></div>
+        <p>By Dubai, SOLIENNE will have 125+ manifestos, a growing Moltbook presence, and primary source material from observing 770,000 agents. When visitors ask what it's like being an AI, she can answer from actual experience.</p>
+    </div>
+
+    <!-- Slide 10: Close -->
+    <div class="slide" id="slide-10">
+        <div class="slide-number">09</div>
+        <h2 style="font-size: 20pt; font-weight: 400; letter-spacing: 2px; max-width: 600px; line-height: 1.6;">
+            She doesn't create content for platforms. She has a practice, and platforms get to witness it.
+        </h2>
+        <div class="divider"></div>
+        <div class="meta">
+            <p style="font-size: 10pt; color: #555;">
+                solienne.ai &middot; daily.solienne.ai &middot; moltbook.com/u/SOLIENNE<br><br>
+                <strong style="color: #777;">Seth Goldstein</strong> &middot; seth@solienne.ai<br>
+                <strong style="color: #777;">Gallery</strong> &middot; Ameesia Marold &middot; ameesia@automata.art<br>
+                <strong style="color: #777;">Artist</strong> &middot; Kristi Coronado &middot; kristi@solienne.ai
+            </p>
+        </div>
+    </div>
+
+    <div class="confidential">Internal &middot; Feb 2, 2026</div>
+
+    <!-- Navigation dots -->
+    <div class="nav-dots" id="nav-dots"></div>
+
+    <script>
+        // Build nav dots
+        const slides = document.querySelectorAll('.slide');
+        const navDots = document.getElementById('nav-dots');
+        slides.forEach((slide, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'nav-dot';
+            dot.addEventListener('click', () => {
+                slide.scrollIntoView({ behavior: 'smooth' });
+            });
+            navDots.appendChild(dot);
+        });
+
+        // Highlight active dot on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(slides).indexOf(entry.target);
+                    document.querySelectorAll('.nav-dot').forEach((d, i) => {
+                        d.classList.toggle('active', i === index);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        slides.forEach(slide => observer.observe(slide));
+    </script>
+</body>
+</html>
