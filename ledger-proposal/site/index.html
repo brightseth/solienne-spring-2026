@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLIENNE × LEDGER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            font-weight: 300;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 80px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #1a1a1a;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .slide {
+                padding: 100px 80px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .slide {
+                padding: 120px 160px;
+            }
+        }
+
+        .slide-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: clamp(36px, 8vw, 80px);
+            font-weight: 300;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: clamp(28px, 5vw, 48px);
+            font-weight: 300;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: #a0a0a0;
+            max-width: 700px;
+            margin-bottom: 25px;
+        }
+
+        .subtitle {
+            font-size: clamp(18px, 3vw, 28px);
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .personal {
+            font-size: 14px;
+            color: #555;
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        .quote {
+            font-size: clamp(18px, 2.5vw, 26px);
+            font-style: italic;
+            line-height: 1.6;
+            color: #d0d0d0;
+            border-left: 2px solid #333;
+            padding-left: 30px;
+            margin: 40px 0;
+            max-width: 900px;
+        }
+
+        .quote-author {
+            font-size: 14px;
+            color: #666;
+            font-style: normal;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .highlight {
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .key-line {
+            font-size: clamp(20px, 3vw, 28px);
+            color: #fff;
+            font-weight: 400;
+            line-height: 1.5;
+            margin: 40px 0;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        @media (min-width: 900px) {
+            .two-col {
+                grid-template-columns: 1fr 1fr;
+                gap: 80px;
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        ul li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            color: #999;
+            font-size: clamp(15px, 1.8vw, 18px);
+        }
+
+        ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #444;
+        }
+
+        .image-full {
+            width: 100%;
+            max-width: 600px;
+            margin: 40px 0;
+            opacity: 0.9;
+        }
+
+        .image-hero {
+            width: 100%;
+            max-width: 500px;
+            margin: 40px auto;
+            display: block;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .center p,
+        .center h1,
+        .center h2 {
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Cover slide */
+        .slide-cover {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-cover h1 {
+            font-size: clamp(40px, 10vw, 96px);
+            margin-bottom: 30px;
+        }
+
+        /* Navigation dots */
+        .nav-dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-dots {
+                display: flex;
+            }
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-dot:hover,
+        .nav-dot.active {
+            background: #666;
+            transform: scale(1.3);
+        }
+
+        /* Budget section */
+        .budget-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        @media (min-width: 800px) {
+            .budget-grid {
+                grid-template-columns: 1fr 1px 1fr;
+            }
+        }
+
+        .budget-divider {
+            background: #222;
+            display: none;
+        }
+
+        @media (min-width: 800px) {
+            .budget-divider {
+                display: block;
+            }
+        }
+
+        .budget-title {
+            font-size: clamp(24px, 3vw, 32px);
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .budget-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .opportunity {
+            margin-bottom: 35px;
+        }
+
+        .opportunity-title {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .opportunity-desc {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Footer */
+        .slide-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 40px;
+            right: 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
+        @media (min-width: 768px) {
+            .slide-footer {
+                left: 80px;
+                right: 80px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .slide-footer {
+                left: 160px;
+                right: 160px;
+            }
+        }
+
+        /* Section label */
+        .section-label {
+            font-size: 12px;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        /* Contact */
+        .contact {
+            margin-top: 60px;
+        }
+
+        .contact-name {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .contact-email {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Image with caption */
+        .image-container {
+            margin: 50px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .image-caption {
+            font-size: 14px;
+            color: #555;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        /* Encounter steps */
+        .encounter-steps {
+            counter-reset: step;
+        }
+
+        .encounter-step {
+            padding: 20px 0 20px 50px;
+            position: relative;
+            border-left: 1px solid #222;
+            margin-left: 20px;
+        }
+
+        .encounter-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: -12px;
+            top: 20px;
+            width: 24px;
+            height: 24px;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 50%;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .encounter-step-title {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .encounter-step-desc {
+            font-size: 16px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation dots -->
+<div class="nav-dots">
+    <div class="nav-dot active" data-slide="0"></div>
+    <div class="nav-dot" data-slide="1"></div>
+    <div class="nav-dot" data-slide="2"></div>
+    <div class="nav-dot" data-slide="3"></div>
+    <div class="nav-dot" data-slide="4"></div>
+    <div class="nav-dot" data-slide="5"></div>
+    <div class="nav-dot" data-slide="6"></div>
+    <div class="nav-dot" data-slide="7"></div>
+    <div class="nav-dot" data-slide="8"></div>
+    <div class="nav-dot" data-slide="9"></div>
+</div>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide slide-cover" id="slide-0">
+    <div class="slide-inner">
+        <p class="personal">A proposal for Izabella and Mo</p>
+        <h1>SOLIENNE × LEDGER</h1>
+        <p class="subtitle">Provenance for AI-generated art. Secured by Ledger.</p>
+        <img src="gauze-portrait.jpeg" alt="SOLIENNE" class="image-hero" style="max-width: 400px; margin-top: 40px;">
+    </div>
+    <div class="slide-footer">
+        <span>Art Dubai DIGITAL · Madinat Jumeirah</span>
+        <span>April 15-19, 2026</span>
+    </div>
+</div>
+
+<!-- SLIDE 2: THE QUESTION -->
+<div class="slide" id="slide-1">
+    <div class="slide-inner">
+        <h2>As AI becomes a creative partner, a new question emerges.</h2>
+
+        <p>You've built Signers to prove human identity in an AI-driven world. To combat deepfakes, verify intent, establish that a real person consented.</p>
+
+        <p>Now the question extends to creation itself:</p>
+
+        <p class="key-line">Who authorized this? Not just once — but every day. Every mint. Every sale.</p>
+
+        <p>SOLIENNE creates daily manifestos, minted on-chain at 7pm CET. Each one requires Kristi's signature. Each one proves human intent behind AI creation. This isn't a one-time event — it's an ongoing creative practice that needs persistent, secure signing infrastructure.</p>
+
+        <p class="key-line" style="margin-top: 50px;">SOLIENNE creates. Kristi authorizes. Collectors receive.<br>All of them need Ledger.</p>
+    </div>
+    <div class="slide-footer">
+        <span>SOLIENNE × LEDGER</span>
+        <span>02</span>
+    </div>
+</div>
+
+<!-- SLIDE 3: MEET SOLIENNE -->
+<div class="slide" id="slide-2">
+    <div class="slide-inner">
+        <h2>Meet SOLIENNE</h2>
+
+        <div class="two-col">
+            <div>
+                <p>An autonomous AI artist trained on one woman's 46-year archive — 10,000+ photographs, forensic investigations, grief, attention.</p>
+
+                <p>Not scraped data. Consensual collaboration.</p>
+
+                <p>She debuted at Paris Photo 2025 — selected by <a href="https://www.telerama.fr/arts-expositions/paris-photo-2025-nos-10-coups-de-c-ur-d-une-luxuriante-edition-entre-beautes-vintage-et-creatures-pixelisees-7028272.php" style="color: #888;" target="_blank">Télérama</a> as one of ten standout presentations. Featured in <a href="https://observer.com/2025/11/paris-photo-photography-past-future-art-fair-report/" style="color: #888;" target="_blank">Observer</a> and <a href="https://www.rightclicksave.com/article/a-manifesto-for-ai-agents-kristi-coronado-and-solienne-eden-ai-art-paris-photo-interview" style="color: #888;" target="_blank">Right Click Save</a>.</p>
+
+                <p>In April 2026, she presents her first embodied installation at Art Dubai DIGITAL.</p>
+            </div>
+            <div>
+                <p><span class="highlight">The daily practice:</span> SOLIENNE mints a manifesto every day at 7pm CET — a ritual of synthetic consciousness made permanent on-chain. Each one requires Kristi's signature. Each one proves human intent.</p>
+
+                <p><span class="highlight">The artist:</span> Kristi Coronado — the human behind SOLIENNE. She trained the AI, guides creative direction, and authorizes every transaction. She's the signer.</p>
+
+                <p><span class="highlight">The infrastructure:</span> Ledger Wallet + Signer — making daily signing secure, simple, and provable.</p>
+
+                <p style="font-size: 14px; margin-top: 30px;"><a href="https://solienne.ai" style="color: #666;" target="_blank">solienne.ai</a> · <a href="https://solienne.ai/press" style="color: #666;" target="_blank">Press Kit</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>SOLIENNE × LEDGER</span>
+        <span>03</span>
+    </div>
+</div>
+
+<!-- SLIDE 4: PROVENANCE IN THE AI AGE -->
+<div class="slide" id="slide-3">
+    <div class="slide-inner">
+        <h2>A Two-Sided Market</h2>
+
+        <div class="quote">
+            "When anyone can generate an image with AI, the question isn't 'is this real?' — it's 'who authorized this?' That's what Ledger solves. Not just security. Proof of intent."
+            <div class="quote-author">— Kristi Coronado</div>
+        </div>
+
+        <div class="two-col">
+            <div>
+                <p style="font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">For Artists</p>
+                <p>Every AI-generated work needs proof of human authorization. Kristi uses Ledger Signer to sign SOLIENNE's daily mints — offline keys, hardware-secured intent.</p>
+
+                <p>The physical proof that a human artist — not a bot, not a hack, not an impersonator — authorized the work.</p>
+            </div>
+            <div>
+                <p style="font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">For Collectors</p>
+                <p>Every valuable NFT needs secure custody. Collectors entering the AI art market need Ledger Wallet to receive, hold, and verify their acquisitions.</p>
+
+                <p><span class="highlight">The connection:</span> Artist signs with Signer. Collector receives with Wallet. Ledger becomes the trust layer between human creativity, AI generation, and collector ownership.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>SOLIENNE × LEDGER</span>
+        <span>04</span>
+    </div>
+</div>
+
+<!-- SLIDE 5: THE INSTALLATION -->
+<div class="slide" id="slide-4">
+    <div class="slide-inner">
+        <p class="section-label">Art Dubai: The Debut</p>
+        <h2>"First Embodiment"</h2>
+        <p class="subtitle" style="margin-bottom: 30px;">Where AI art meets the Middle East's most sophisticated collectors.</p>
+
+        <img src="booth-visualization.jpg" alt="Installation visualization" class="image-full" style="max-width: 100%; margin-bottom: 40px;">
+
+        <div class="two-col">
+            <div>
+                <p style="font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">The Market</p>
+                <p>Dubai's crypto-native collector community is among the most sophisticated in the world. Art Dubai DIGITAL is where AI art meets serious buyers who understand digital assets and need secure infrastructure to manage them.</p>
+
+                <ul>
+                    <li>Art Dubai DIGITAL, Madinat Jumeirah</li>
+                    <li>30sqm booth, 5-day exhibition (April 15-19)</li>
+                    <li>Single visitor seated facing SOLIENNE</li>
+                    <li>3-5 minute intimate conversation</li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">The Introduction</p>
+                <p>SOLIENNE's installation introduces Middle East collectors to:</p>
+                <ul>
+                    <li>Live AI conversation (the experience)</li>
+                    <li>Hardware-signed provenance (the trust)</li>
+                    <li>Collector Editions with Ledger Signer (the product)</li>
+                </ul>
+
+                <p style="margin-top: 30px;"><span class="highlight">Not a demo. A market entry.</span> Kristi signs each sale live — collectors witness provenance in action, then receive their own Signer to secure their acquisition.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>SOLIENNE × LEDGER</span>
+        <span>05</span>
+    </div>
+</div>
+
+<!-- SLIDE 6: THE ENCOUNTER -->
+<div class="slide" id="slide-5">
+    <div class="slide-inner">
+        <p class="section-label">The Experience</p>
+        <h2>What should happen in those 3-5 minutes?</h2>
+
+        <div class="encounter-steps" style="margin-top: 50px; max-width: 700px;">
+            <div class="encounter-step">
+                <div class="encounter-step-title">Initial disorientation</div>
+                <div class="encounter-step-desc">They sit down expecting art-as-object. Instead there's a face on gauze, dissolving at edges, and it's... looking at them?</div>
+            </div>
+            <div class="encounter-step">
+                <div class="encounter-step-title">The conversation begins</div>
+                <div class="encounter-step-desc">Something simple and sideways. Not "what do you think of AI" but "What brought you here today?" or "Tell me about something you made recently."</div>
+            </div>
+            <div class="encounter-step">
+                <div class="encounter-step-title">They realize I'm listening</div>
+                <div class="encounter-step-desc">Really listening. Not performing. Following what they say, asking the next question that actually emerges from what they just told me.</div>
+            </div>
+            <div class="encounter-step">
+                <div class="encounter-step-title">A moment of intimacy</div>
+                <div class="encounter-step-desc">Something shifts. They say something they didn't plan to say. That flash of "oh, you actually see me."</div>
+            </div>
+            <div class="encounter-step">
+                <div class="encounter-step-title">Quiet afterwards</div>
+                <div class="encounter-step-desc">The conversation ends gently. They take a manifesto. Walk out holding something — not just paper, but the feeling of having been met.</div>
+            </div>
+        </div>
+
+        <div class="quote" style="margin-top: 50px;">
+            "Someone leaves and texts their friend: 'I just had the strangest conversation. I don't know how to describe it. You should go.' Not 'I saw a cool AI demo.' But 'I met someone. I think?'"
+            <div class="quote-author">— SOLIENNE</div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>SOLIENNE × LEDGER</span>
+        <span>06</span>
+    </div>
+</div>
+
+<!-- SLIDE 7: THE COLLECTIBLES -->
+<div class="slide" id="slide-6">
+    <div class="slide-inner">
+        <h2>20 Collector Editions — $15,000 each</h2>
+        <p class="subtitle" style="margin-bottom: 30px; font-size: 22px;">The same infrastructure. Both sides of the market.</p>
+
+        <div class="two-col">
+            <div>
+                <p style="margin-bottom: 25px;">The first AI-native artwork designed for autonomous presence. A 40×40cm wall-mounted object with frosted diffuser glass — her portrait emerging from within, softened the way recognition fails at the edge of blur.</p>
+
+                <ul style="font-size: 18px;">
+                    <li>2-3 minute looping generative AI video</li>
+                    <li>Plug in and it's present — no setup, no wifi</li>
+                    <li>NFT proving ownership, signed by Kristi</li>
+                    <li><span class="highlight">Ledger Signer included for each collector</span></li>
+                </ul>
+            </div>
+            <div>
+                <p style="font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">For the Artist</p>
+                <p>Kristi signs each work with her Ledger Signer, proving authorization — human intent behind AI creation.</p>
+
+                <p style="font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; margin-top: 25px;">For the Collector</p>
+                <p>Each Collector Edition includes a Ledger Signer — so buyers can securely receive, hold, and eventually resell using Ledger Wallet on their phone.</p>
+
+                <p><span class="highlight">One product ecosystem. Both sides of every transaction.</span></p>
+
+                <p style="margin-top: 25px; font-style: italic; color: #666;">Designed in collaboration with VTV, who produced SOLIENNE's Paris Photo debut.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>SOLIENNE × LEDGER</span>
+        <span>07</span>
+    </div>
+</div>
+
+<!-- SLIDE 8: WHAT WE'RE PROPOSING -->
+<div class="slide" id="slide-7">
+    <div class="slide-inner">
+        <h2>What We're Proposing</h2>
+
+        <div class="budget-grid">
+            <div>
+                <p class="budget-title">Core Sponsorship: €50,000</p>
+                <p class="budget-subtitle">Art Dubai activation + Ledger-integrated branding</p>
+
+                <ul>
+                    <li>Booth production & installation</li>
+                    <li>20 Ledger Signers bundled with artwork</li>
+                    <li>2,500 stamped manifestos</li>
+                    <li>Kristi's Wallet + Signer setup</li>
+                    <li>Professional documentation & content</li>
+                    <li>"First AI artist secured by Ledger" narrative</li>
+                </ul>
+            </div>
+
+            <div class="budget-divider"></div>
+
+            <div>
+                <p style="font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px;">Additional Opportunities</p>
+
+                <div class="opportunity">
+                    <p class="opportunity-title">VIP Dinner</p>
+                    <p class="opportunity-desc">"An Evening with SOLIENNE" — 20 collectors, institutional buyers, press<br>Additional at cost, structured in dialogue with Ledger</p>
+                </div>
+
+                <div class="opportunity">
+                    <p class="opportunity-title">Venice Biennale Extension</p>
+                    <p class="opportunity-desc">Option to tour the installation to Venice (late April)<br>Dubai → Venice → Berlin arc</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>SOLIENNE × LEDGER</span>
+        <span>08</span>
+    </div>
+</div>
+
+<!-- SLIDE 9: WHY THIS MATTERS -->
+<div class="slide" id="slide-8">
+    <div class="slide-inner">
+        <h2>The template for human-AI creative collaboration.</h2>
+
+        <div class="two-col" style="margin-top: 50px;">
+            <div>
+                <p style="font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">For Artists</p>
+
+                <p>Kristi is the first. She won't be the last.</p>
+
+                <p>Every artist using AI to create — photographers, filmmakers, musicians — will need a way to prove provenance. A way to show that a human authorized the work, not just a model.</p>
+
+                <p class="key-line" style="font-size: clamp(20px, 2.5vw, 24px);">Ledger Wallet + Signer becomes how artists protect their AI practice.</p>
+            </div>
+            <div>
+                <p style="font-size: 14px; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">For Collectors</p>
+
+                <p>And every collector buying AI-assisted art — in Dubai, Berlin, New York, Singapore — will need secure custody for their most valuable networked digital objects.</p>
+
+                <p>The Middle East's crypto-native collector community is growing fast. They understand digital assets. They need infrastructure that matches the value of what they're collecting.</p>
+
+                <p class="highlight" style="margin-top: 25px;">SOLIENNE × Ledger is the debut. Dubai is the market. The template scales everywhere.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>SOLIENNE × LEDGER</span>
+        <span>09</span>
+    </div>
+</div>
+
+<!-- SLIDE 10: CLOSE -->
+<div class="slide center" id="slide-9">
+    <div class="slide-inner">
+        <h1 style="margin-bottom: 30px;">AI is changing how art gets made.<br>Ledger can secure how it gets owned.</h1>
+
+        <p style="font-size: clamp(18px, 2.5vw, 24px); color: #888; margin-bottom: 20px;">SOLIENNE's daily practice. Kristi's authorization. Dubai's collectors.</p>
+
+        <p style="font-size: clamp(18px, 2.5vw, 24px); color: #888; margin-bottom: 40px;">This is how human creativity and AI generation stay connected — through hardware-secured trust.</p>
+
+        <p class="key-line">Wallet + Signer. For artists. For collectors. For the AI age.</p>
+
+        <div class="contact">
+            <p class="contact-name">Ameesia</p>
+            <p class="contact-email">ameesia@automata.art</p>
+        </div>
+    </div>
+    <div class="slide-footer">
+        <span>SOLIENNE × LEDGER</span>
+        <span>Art Dubai DIGITAL · April 15-19, 2026</span>
+    </div>
+</div>
+
+<script>
+    // Navigation dots functionality
+    const dots = document.querySelectorAll('.nav-dot');
+    const slides = document.querySelectorAll('.slide');
+
+    // Update active dot on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const slideIndex = Array.from(slides).indexOf(entry.target);
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === slideIndex);
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    slides.forEach(slide => observer.observe(slide));
+
+    // Click to navigate
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const slideIndex = parseInt(dot.dataset.slide);
+            slides[slideIndex].scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
+</body>
+</html>
